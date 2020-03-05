@@ -119,52 +119,10 @@ Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Librar
 Preprocessing /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/model.cpp...
 Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/model.cpp...
 Preprocessing /home/travis/build/EDrever-Smith/2019_/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/vector.cpp:210: warning: Reached end of file while still inside a (nested) comment. Nesting level 2 (probable line reference: 114, 105)
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:6: warning: the name `This' supplied as the second argument in the \file statement is not an input file
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/matrix.h:6: warning: the name `This' supplied as the second argument in the \file statement is not an input file
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/model.h:6: warning: the name `This' supplied as the second argument in the \file statement is not an input file
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:4: warning: the name `This' supplied as the second argument in the \file statement is not an input file
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/tetrahedron.h:12: warning: Compound Tetrahedron is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:9: warning: Compound Hexahedron is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:11: warning: Compound Cell is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:12: warning: Compound Vector is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/pyramid.h:10: warning: Compound Pyramid is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:20: warning: Member operator=(const Cell &c) (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:22: warning: Member getVolume() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:23: warning: Member getWeight() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:24: warning: Member getType() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:25: warning: Member getGravityCenter() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:26: warning: Member getVertex() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:39: warning: Member setVolume() (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:40: warning: Member setWeight() (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:41: warning: Member setGravityCenter() (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:32: warning: Member data (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:33: warning: Member cellType (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:34: warning: Member gravityCenter (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:35: warning: Member volume (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:36: warning: Member weight (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:37: warning: Member density (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:29: warning: Member operator<<(std::ostream &out, const Cell &c) (friend) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:13: warning: Member Hexahedron(Vector &v0, Vector &v1, Vector &v2, Vector &v3, Vector &v4, Vector &v5, Vector &v6, Vector &v7, Material &m) (function) of class Hexahedron is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:19: warning: Member operator=(const Hexahedron &h) (function) of class Hexahedron is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:20: warning: Member operator=(const Cell &c) (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:22: warning: Member getVolume() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:23: warning: Member getWeight() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:24: warning: Member getType() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:25: warning: Member getGravityCenter() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:26: warning: Member getVertex() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:22: warning: Member setVolume() override (function) of class Hexahedron is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:40: warning: Member setWeight() (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:41: warning: Member setGravityCenter() (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:32: warning: Member data (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:33: warning: Member cellType (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:34: warning: Member gravityCenter (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:35: warning: Member volume (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:36: warning: Member weight (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:37: warning: Member density (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:20: warning: Member density (variable) of class Material is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:21: warning: Member colour (variable) of class Material is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:22: warning: Member name (variable) of class Material is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:23: warning: Member id (variable) of class Material is not documented.
 GROUP_32/Model_Loading_Library/src/pyramid.cpp...
 Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/pyramid.cpp...
 Preprocessing /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/tetrahedron.cpp...
@@ -238,56 +196,22 @@ Generating code for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Lo
 Generating code for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/tetrahedron.h...
 Generating code for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h...
 Generating file documentation...
-Generating page documentation...
-Generating group documentation...
-Generating class documentation...
-Generating docs for compound Cell...
-Generating docs for compound Hexahedron...
-Generating docs for compound Material...
-Generating doc/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/matrix.h:124: warning: Member data (variable) of class Matrix is not documented.
+Generating docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h...
+Generating docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h...
+Generati/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:13: warning: Member Hexahedron(Vector &v0, Vector &v1, Vector &v2, Vector &v3, Vector &v4, Vector &v5, Vector &v6, Vector &v7, Material &m) (function) of class Hexahedron is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:19: warning: Member operator=(const Hexahedron &h) (function) of class Hexahedron is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:20: warning: Member density (variable) of class Material is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:21: warning: Member colour (variable) of class Material is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:22: warning: Member name (variable) of class Material is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:23: warning: Member id (variable) of class Material is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/matrix.h:124: warning: Member data (variable) of class Matrix is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/matrix.h:125: warning: Member row (variable) of class Matrix is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/matrix.h:126: warning: Member col (variable) of class Matrix is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/matrix.h:127: warning: Member size (variable) of class Matrix is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/model.h:84: warning: Member getPyramid() const  (function) of class Model is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/model.h:85: warning: Member getHex() const  (function) of class Model is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/model.h:86: warning: Member getTetra() const  (function) of class Model is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/model.h:142: warning: Member pyramidList (variable) of class Model is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/model.h:143: warning: Member hexList (variable) of class Model is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/model.h:144: warning: Member tetraList (variable) of class Model is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/pyramid.h:14: warning: Member Pyramid(Vector &v0, Vector &v1, Vector &v2, Vector &v3, Vector &v4, Material &m) (function) of class Pyramid is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/pyramid.h:20: warning: Member operator=(const Pyramid &p) (function) of class Pyramid is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:20: warning: Member operator=(const Cell &c) (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:22: warning: Member getVolume() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:23: warning: Member getWeight() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:24: warning: Member getType() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:25: warning: Member getGravityCenter() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:26: warning: Member getVertex() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/pyramid.h:23: warning: Member setVolume() override (function) of class Pyramid is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:40: warning: Member setWeight() (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:41: warning: Member setGravityCenter() (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:32: warning: Member data (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:33: warning: Member cellType (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:34: warning: Member gravityCenter (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:35: warning: Member volume (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:36: warning: Member weight (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:37: warning: Member density (variable) of class Cell is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/tetrahedron.h:16: warning: Member Tetrahedron(Vector &v0, Vector &v1, Vector &v2, Vector &v3, Material &m) (function) of class Tetrahedron is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/tetrahedron.h:22: warning: Member operator=(const Tetrahedron &c) (function) of class Tetrahedron is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:20: warning: Member operator=(const Cell &c) (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:22: warning: Member getVolume() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:23: warning: Member getWeight() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:24: warning: Member getType() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:25: warning: Member getGravityCenter() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:26: warning: Member getVertex() const  (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/tetrahedron.h:25: warning: Member setVolume() override (function) of class Tetrahedron is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:40: warning: Member setWeight() (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:41: warning: Member setGravityCenter() (function) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:32: warning: Member data (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:33: warning: Member cellType (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:34: warning: Member gravityCenter (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:35: warning: Member volume (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:36: warning: Member weight (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:37: warning: Member density (variable) of class Cell is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:15: warning: Member Vector(float i, float j, float k) (function) of class Vector is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:18: warning: Member Vector(const Vector &_Vector) (function) of class Vector is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:20: warning: Member operator=(const Vector &_Vector) (function) of class Vector is not documented.
@@ -311,7 +235,16 @@ Generating doc/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Libra
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:59: warning: Member mag (variable) of class Vector is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:27: warning: Member operator*(const float ScalingFactor, const Vector &v) (friend) of class Vector is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:52: warning: Member operator<<(ostream &out, const Vector &v) (friend) of class Vector is not documented.
-s for compound Matrix...
+ng docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/matrix.h...
+Generating docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/model.h...
+Generating docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h...
+Generating page documentation...
+Generating group documentation...
+Generating class documentation...
+Generating docs for compound Cell...
+Generating docs for compound Hexahedron...
+Generating docs for compound Material...
+Generating docs for compound Matrix...
 Generating docs for compound Model...
 Generating docs for compound Pyramid...
 Generating docs for compound Tetrahedron...
@@ -333,5 +266,5 @@ Generating file member index...
 Generating example index...
 finalizing index lists...
 writing tag file...
-lookup cache used 210/65536 hits=1154 misses=220
+lookup cache used 204/65536 hits=1129 misses=214
 finished...

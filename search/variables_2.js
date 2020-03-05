@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uninitcelllist',['uninitCellList',['../class_model.html#acef8325f33e9b0fa3a49c903f031455e',1,'Model']]]
+  ['gravitycenter',['gravityCenter',['../class_cell.html#a41af1fc86e0755fa2465ddda2a5dc3d6',1,'Cell']]]
 ];

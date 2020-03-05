@@ -6,7 +6,9 @@ var searchData=
   ['getcolour',['getColour',['../class_material.html#aa3cf93e7e978ab05178c3891d095601a',1,'Material']]],
   ['getdensity',['getDensity',['../class_material.html#a2f4aef76c8505c30caa3f21488f8cf04',1,'Material']]],
   ['getdepth',['getDepth',['../class_model.html#aec0bea9593361a1afbbd4f833cf88d3f',1,'Model']]],
+  ['getgravitycenter',['getGravityCenter',['../class_cell.html#a52ac85520bec417314891d3865174246',1,'Cell']]],
   ['getheight',['getHeight',['../class_model.html#a29b9d8c59067497e508b3fd1a62c996a',1,'Model']]],
+  ['gethex',['getHex',['../class_model.html#ab7ab516b47c54a56ee02058384a1c133',1,'Model']]],
   ['getid',['getID',['../class_material.html#a9cf351d35e59b70e42953679c3060ea0',1,'Material']]],
   ['getmodelcentre',['getModelCentre',['../class_model.html#a4302ec2c55b1d8e1212f4ecf6018dd11',1,'Model']]],
   ['getmodelweight',['getModelWeight',['../class_model.html#a001374f489b68c28474b71ea578bc7ac',1,'Model']]],
@@ -14,7 +16,14 @@ var searchData=
   ['getnumberofcells',['getNumberOfCells',['../class_model.html#ae15cf1afea55849f6e1c7b41b6835592',1,'Model']]],
   ['getnumberofmaterials',['getNumberOfMaterials',['../class_model.html#a24d19f1307a829f82bc6fb26f6b45edf',1,'Model']]],
   ['getnumberofvertices',['getNumberOfVertices',['../class_model.html#a8b0a0d3b9c0f6f862ca97ff89b1a0521',1,'Model']]],
+  ['getpyramid',['getPyramid',['../class_model.html#ac8c753dc5f23e20825b8d61908399295',1,'Model']]],
   ['getrow',['getRow',['../class_matrix.html#ac4579b48a02bff083ac7132144b89b52',1,'Matrix']]],
   ['getsize',['getSize',['../class_matrix.html#af32078bc580ab3fbe8c7513f330c3da1',1,'Matrix']]],
-  ['getwidth',['getWidth',['../class_model.html#a02cdfeae3f82b26386603f6bf1536b4e',1,'Model']]]
+  ['gettetra',['getTetra',['../class_model.html#afcb2b8e6d48136452fb0517e509c4527',1,'Model']]],
+  ['gettype',['getType',['../class_cell.html#af181f73510357eaeb0823b74bb92d425',1,'Cell']]],
+  ['getvertex',['getVertex',['../class_cell.html#a6c4f3646f1ded35ec117820952ffbd4f',1,'Cell']]],
+  ['getvolume',['getVolume',['../class_cell.html#a8d2eb841b19cf1ea92ba2b438358b9f3',1,'Cell']]],
+  ['getweight',['getWeight',['../class_cell.html#a04ce81b63cb4e6e09f48f1f2f6da11a3',1,'Cell']]],
+  ['getwidth',['getWidth',['../class_model.html#a02cdfeae3f82b26386603f6bf1536b4e',1,'Model']]],
+  ['gravitycenter',['gravityCenter',['../class_cell.html#a41af1fc86e0755fa2465ddda2a5dc3d6',1,'Cell']]]
 ];
