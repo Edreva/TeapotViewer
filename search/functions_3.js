@@ -3,6 +3,7 @@ var searchData=
   ['generatecelllist',['generateCellList',['../class_model.html#ae9a35ea73ca0aad22d9caae6974a897c',1,'Model']]],
   ['genrotationmatrix',['genRotationMatrix',['../class_matrix.html#a07a3ae7f108c40411792095afe2871d6',1,'Matrix']]],
   ['getcol',['getCol',['../class_matrix.html#a9cc613623b105a5a051272dd4aabf130',1,'Matrix']]],
+  ['getcolorrgb',['getColorRGB',['../class_cell.html#ac5aecad749c7956494cbe9c75dd71bf4',1,'Cell']]],
   ['getcolour',['getColour',['../class_material.html#aa3cf93e7e978ab05178c3891d095601a',1,'Material']]],
   ['getdensity',['getDensity',['../class_material.html#a2f4aef76c8505c30caa3f21488f8cf04',1,'Material']]],
   ['getdepth',['getDepth',['../class_model.html#aec0bea9593361a1afbbd4f833cf88d3f',1,'Model']]],

@@ -198,8 +198,12 @@ Generating code for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Lo
 Generating file documentation...
 Generating docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h...
 Generating docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h...
-Generati/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:13: warning: Member Hexahedron(Vector &v0, Vector &v1, Vector &v2, Vector &v3, Vector &v4, Vector &v5, Vector &v6, Vector &v7, Material &m) (function) of class Hexahedron is not documented.
+Generati/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:75: warning: Member hexToDec(string) const  (function) of class Cell is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:64: warning: Member color (variable) of class Cell is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:13: warning: Member Hexahedron(Vector &v0, Vector &v1, Vector &v2, Vector &v3, Vector &v4, Vector &v5, Vector &v6, Vector &v7, Material &m) (function) of class Hexahedron is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:19: warning: Member operator=(const Hexahedron &h) (function) of class Hexahedron is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:75: warning: Member hexToDec(string) const  (function) of class Cell is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:64: warning: Member color (variable) of class Cell is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:20: warning: Member density (variable) of class Material is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:21: warning: Member colour (variable) of class Material is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:22: warning: Member name (variable) of class Material is not documented.
@@ -210,8 +214,12 @@ Generati/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/inc
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/matrix.h:127: warning: Member size (variable) of class Matrix is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/pyramid.h:14: warning: Member Pyramid(Vector &v0, Vector &v1, Vector &v2, Vector &v3, Vector &v4, Material &m) (function) of class Pyramid is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/pyramid.h:20: warning: Member operator=(const Pyramid &p) (function) of class Pyramid is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:75: warning: Member hexToDec(string) const  (function) of class Cell is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:64: warning: Member color (variable) of class Cell is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/tetrahedron.h:16: warning: Member Tetrahedron(Vector &v0, Vector &v1, Vector &v2, Vector &v3, Material &m) (function) of class Tetrahedron is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/tetrahedron.h:22: warning: Member operator=(const Tetrahedron &c) (function) of class Tetrahedron is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:75: warning: Member hexToDec(string) const  (function) of class Cell is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:64: warning: Member color (variable) of class Cell is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:15: warning: Member Vector(float i, float j, float k) (function) of class Vector is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:18: warning: Member Vector(const Vector &_Vector) (function) of class Vector is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:20: warning: Member operator=(const Vector &_Vector) (function) of class Vector is not documented.
@@ -266,5 +274,5 @@ Generating file member index...
 Generating example index...
 finalizing index lists...
 writing tag file...
-lookup cache used 204/65536 hits=1129 misses=214
+lookup cache used 207/65536 hits=1140 misses=217
 finished...
