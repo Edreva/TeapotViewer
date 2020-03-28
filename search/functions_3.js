@@ -22,6 +22,8 @@ var searchData=
   ['getsize',['getSize',['../class_matrix.html#af32078bc580ab3fbe8c7513f330c3da1',1,'Matrix']]],
   ['gettetra',['getTetra',['../class_model.html#afcb2b8e6d48136452fb0517e509c4527',1,'Model']]],
   ['gettype',['getType',['../class_cell.html#af181f73510357eaeb0823b74bb92d425',1,'Cell']]],
+  ['getvector',['getVector',['../class_model.html#a814c8ec56d7abcc2f3292ad9cd9a78b9',1,'Model']]],
+  ['getvectornumber',['getVectorNumber',['../class_cell.html#ad623ce2d530724ec571d554b006e80eb',1,'Cell']]],
   ['getvertex',['getVertex',['../class_cell.html#a6c4f3646f1ded35ec117820952ffbd4f',1,'Cell']]],
   ['getvolume',['getVolume',['../class_cell.html#a8d2eb841b19cf1ea92ba2b438358b9f3',1,'Cell']]],
   ['getweight',['getWeight',['../class_cell.html#a04ce81b63cb4e6e09f48f1f2f6da11a3',1,'Cell']]],
