@@ -118,10 +118,10 @@ Preprocessing /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Libra
 Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/matrix.cpp...
 Preprocessing /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/model.cpp...
 Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/model.cpp...
-Preprocessing /home/travis/build/EDrever-Smith/2019_/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/vector.cpp:242: warning: Reached end of file while still inside a (nested) comment. Nesting level 2 (probable line reference: 114, 105)
+Preprocessing /home/travis/build/EDrever-Smith/2019_/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/vector.cpp:243: warning: Reached end of file while still inside a (nested) comment. Nesting level 2 (probable line reference: 114, 105)
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/tetrahedron.h:12: warning: Compound Tetrahedron is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:9: warning: Compound Hexahedron is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:12: warning: Compound Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:13: warning: Compound Vector is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/pyramid.h:10: warning: Compound Pyramid is not documented.
 GROUP_32/Model_Loading_Library/src/pyramid.cpp...
 Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/pyramid.cpp...
@@ -131,8 +131,8 @@ Preprocessing /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Libra
 Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/src/vector.cpp...
 Preprocessing /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/test/matrixTest.cpp...
 Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/test/matrixTest.cpp...
-Preprocessing /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/test/modelTestMain.cpp...
-Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/test/modelTestMain.cpp...
+Preprocessing /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/test/modelTest.cpp...
+Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/test/modelTest.cpp...
 Preprocessing /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/test/vectorTest.cpp...
 Parsing file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/test/vectorTest.cpp...
 Building group list...
@@ -198,7 +198,7 @@ Generating code for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Lo
 Generating file documentation...
 Generating docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h...
 Generating docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h...
-Generating docs /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:77: warning: Member hexToDec(string) const  (function) of class Cell is not documented.
+Generating docs for file/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:77: warning: Member hexToDec(string) const  (function) of class Cell is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:66: warning: Member color (variable) of class Cell is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:13: warning: Member Hexahedron(Vector &v0, Vector &v1, Vector &v2, Vector &v3, Vector &v4, Vector &v5, Vector &v6, Vector &v7, Material &m) (function) of class Hexahedron is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/hexahedron.h:19: warning: Member operator=(const Hexahedron &h) (function) of class Hexahedron is not documented.
@@ -220,32 +220,32 @@ Generating docs /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Lib
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/tetrahedron.h:22: warning: Member operator=(const Tetrahedron &c) (function) of class Tetrahedron is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:77: warning: Member hexToDec(string) const  (function) of class Cell is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/cell.h:66: warning: Member color (variable) of class Cell is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:15: warning: Member Vector(float i, float j, float k) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:18: warning: Member Vector(const Vector &_Vector) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:20: warning: Member operator=(const Vector &_Vector) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:21: warning: Member operator+(const Vector &_Vector) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:22: warning: Member operator+=(const Vector &_Vector) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:23: warning: Member operator-=(const Vector &_Vector) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:24: warning: Member operator-(const Vector &_Vector) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:31: warning: Member set_i(const float &value) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:32: warning: Member set_j(const float &value) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:33: warning: Member set_k(const float &value) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:37: warning: Member get_i() const  (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:38: warning: Member get_j() const  (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:39: warning: Member get_k() const  (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:40: warning: Member get_mag() const  (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:42: warning: Member operator[](int) const  (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:43: warning: Member operator==(const Vector &) const  (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:46: warning: Member calc_mag(float _i, float _j, float _k) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:48: warning: Member get_dot_p(const Vector &a) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:50: warning: Member get_cross_p(const Vector &_Vector1) (function) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:59: warning: Member i (variable) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:60: warning: Member j (variable) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:61: warning: Member k (variable) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:62: warning: Member mag (variable) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:27: warning: Member operator*(const float ScalingFactor, const Vector &v) (friend) of class Vector is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:55: warning: Member operator<<(ostream &out, const Vector &v) (friend) of class Vector is not documented.
-for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/matrix.h...
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:16: warning: Member Vector(float i, float j, float k) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:19: warning: Member Vector(const Vector &_Vector) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:21: warning: Member operator=(const Vector &_Vector) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:22: warning: Member operator+(const Vector &_Vector) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:23: warning: Member operator+=(const Vector &_Vector) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:24: warning: Member operator-=(const Vector &_Vector) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:25: warning: Member operator-(const Vector &_Vector) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:32: warning: Member set_i(const float &value) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:33: warning: Member set_j(const float &value) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:34: warning: Member set_k(const float &value) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:38: warning: Member get_i() const  (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:39: warning: Member get_j() const  (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:40: warning: Member get_k() const  (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:41: warning: Member get_mag() const  (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:43: warning: Member operator[](int) const  (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:44: warning: Member operator==(const Vector &) const  (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:47: warning: Member calc_mag(float _i, float _j, float _k) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:49: warning: Member get_dot_p(const Vector &a) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:51: warning: Member get_cross_p(const Vector &_Vector1) (function) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:60: warning: Member i (variable) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:61: warning: Member j (variable) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:62: warning: Member k (variable) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:63: warning: Member mag (variable) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:28: warning: Member operator*(const float ScalingFactor, const Vector &v) (friend) of class Vector is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h:56: warning: Member operator<<(ostream &out, const Vector &v) (friend) of class Vector is not documented.
+ /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/matrix.h...
 Generating docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/model.h...
 Generating docs for file /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/vector.h...
 Generating page documentation...
