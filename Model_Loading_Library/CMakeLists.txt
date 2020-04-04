@@ -1,18 +1,25 @@
 cmake_minimum_required(VERSION 3.12.0)
 
-project(Model_Loading_Library VERSION 0.1)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11") #Makes sure compiler knows to use c++111
+project(Group32ModelViewer)
+
+#Makes sure compiler knows to use c++11 - Will throw warning on some compilers
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11") 
+
+#Allows unit tests to be created
 include (CTest)
-#adds all the classes as libraries
-add_library(cell src/cell.cpp include/cell.h)
-add_library(material src/material.cpp include/material.h)
-add_library(matrix src/matrix.cpp include/matrix.h)
-add_library(vector src/vector.cpp include/vector.h)
-add_library(model src/model.cpp include/model.h)
-add_library(hexa src/hexahedron.cpp include/hexahedron.h)
-add_library(pyramid src/pyramid.cpp include/pyramid.h)
-add_library(tetra src/tetrahedron.cpp include/tetrahedron.h)
-include_directories(include)
+
+#adds all the classes to a libraries
+add_library(Model_Loading_Library 
+ src/cell.cpp include/cell.h
+ src/material.cpp include/material.h
+ src/matrix.cpp include/matrix.h
+ src/vector.cpp include/vector.h
+ src/model.cpp include/model.h
+ src/hexahedron.cpp include/hexahedron.h
+ src/pyramid.cpp include/pyramid.h
+ src/tetrahedron.cpp include/tetrahedron.h)
+
+target_include_directories(Model_Loading_Library PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/include")
 
 #identify mains of executables
 add_executable(modelTest test/modelTest.cpp)
@@ -20,9 +27,9 @@ add_executable(matrixTest test/matrixTest.cpp)
 add_executable(vectorTest test/vectorTest.cpp)
 
 #links required libraries
-target_link_libraries(modelTest model cell material matrix vector hexa pyramid tetra)
-target_link_libraries(matrixTest matrix vector)
-target_link_libraries(vectorTest vector)
+target_link_libraries(modelTest  Model_Loading_Library)
+target_link_libraries(matrixTest Model_Loading_Library)
+target_link_libraries(vectorTest Model_Loading_Library)
 
 add_test(vectorTest vectorTest)
 add_test(matrixTest matrixTest)
