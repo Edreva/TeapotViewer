@@ -67,7 +67,12 @@ MainWindow::MainWindow(QWidget *parent)
     axes = vtkSmartPointer<vtkAxesActor>::New();
     // creates interactable orientation widget object
     orientationMarker = vtkSmartPointer<vtkOrientationMarkerWidget>::New();
-    //
+    // stores all the cells in the mod files
+    cell = vtkSmartPointer<vtkCellArray>::New();
+    // store all the vector in Mod file
+    pointData = vtkSmartPointer<vtkPoints>::New();
+
+    //Creates a plane object which can be used by the clip filter
     plane = vtkSmartPointer<vtkPlane>::New();
 
     // set the background color of the render window
@@ -98,7 +103,7 @@ MainWindow::MainWindow(QWidget *parent)
     planeWidget->SetInteractor( ui->openGLWidget->GetRenderWindow()->GetInteractor() );
     planeWidgetCallback = vtkSmartPointer<vtkPlaneWidgetCallback>::New();
     //planeWidget->HandlesOff();
-    ui->actionDisplayPlaneWidget->setEnabled(true); //TODO_1 Whilst not fully functional, widget is disabled.
+    ui->actionDisplayPlaneWidget->setEnabled(false); //widget disabled unless clip filter is on
 
     //Set up box widget
     boxWidget = vtkSmartPointer<vtkBoxWidget2>::New();
@@ -112,6 +117,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->changeLightColourButton->setShortcut(tr("Alt+C"));
     ui->objectColor->setShortcut(tr("Shift+C"));
     ui->resetCameraButton->setShortcut(tr("Ctrl+R"));
+
+    ui->actionOpen->setIcon(QIcon("openIcon.png"));
+    ui->actionScreenshot->setIcon(QIcon("screenshotIcon.png"));
 
     // set the position of the text on the label
     ui->lightLabel->setAlignment(Qt::AlignCenter);
@@ -170,6 +178,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionDisplayOrientationWidget, SIGNAL(toggled(bool)), this, SLOT(displayOrientationWidget(bool)));
     connect(ui->actionDisplayPlaneWidget, SIGNAL(toggled(bool)), this, SLOT(displayPlaneWidget(bool)));
     connect(ui->actionDisplayBoxWidget, SIGNAL(toggled(bool)), this, SLOT(displayBoxWidget(bool)));
+    connect(ui->actionScreenshot, SIGNAL(triggered()), this, SLOT(handleScreenshot()));
     connect(ui->changeLightColourButton, SIGNAL(clicked()), this, SLOT(setLightColor()));
     connect(ui->intensity, SIGNAL(valueChanged(double)), this, SLOT(setLightIntensitySpinBox()));
     connect(ui->intensitySlider, SIGNAL(valueChanged(int)), this, SLOT(setLightIntensitySlider()));
@@ -189,16 +198,43 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+//function to convert the current vtk window to a png and save it
+void MainWindow::handleScreenshot()
+{
+    QString filename = QFileDialog::getSaveFileName(this, tr("Save Screenshot"),"./",tr("*.png"));
+
+    if (filename.isEmpty()) //if no user exits file dialog rest of function is skipped
+        return;
+
+    vtkSmartPointer<vtkWindowToImageFilter> windowToImageFilter = vtkSmartPointer<vtkWindowToImageFilter>::New();
+    windowToImageFilter->SetInput(renderWindow);
+    windowToImageFilter->SetInputBufferTypeToRGBA(); //also record the alpha channel
+    windowToImageFilter->ReadFrontBufferOff(); // read from the back buffer
+    windowToImageFilter->Update();
+
+    vtkSmartPointer<vtkPNGWriter> writer = vtkSmartPointer<vtkPNGWriter>::New();
+    writer->SetFileName(filename.toLatin1().data());
+    writer->SetInputConnection(windowToImageFilter->GetOutputPort());
+    writer->Write();
+
+}
 //function to select which filter editing dialog box to load based off of which filter is currently selected
 void MainWindow::loadFilterEditor()
 {
     switch(filterButton->checkedId())
     {
     case 0 :
+        ui->actionDisplayPlaneWidget->setChecked(false);
         break;
     case 1 :
+        if(ui->actionDisplayPlaneWidget->isChecked())
+            ui->actionDisplayPlaneWidget->setChecked(false);
+        else
+            ui->actionDisplayPlaneWidget->setChecked(true);
         break;
     case 2 :
+        ui->actionDisplayPlaneWidget->setChecked(false);
         loadShrinkFilterDialog();
         break;
     }
@@ -235,7 +271,7 @@ void MainWindow::open()
     QString filter = "Model Files (*.stl *.mod)";
     // obtain the file name
     QString filename = QFileDialog::getOpenFileName(this, QString("Open STL file"), "./", filter);
-
+	
 	if (actor == nullptr)
 		actor = vtkSmartPointer<vtkActor>::New();
 
@@ -251,14 +287,11 @@ void MainWindow::open()
         return;
     }
 
-	//reset actions
-	ui->actionDisplayOrientationWidget->setChecked(false);
-	if (ui->actionDisplayPlaneWidget->isChecked() == true)
-	{
-		planeWidget->GetRepresentation()->PlaceWidget(actor->GetBounds());
-		planeWidgetCallback->Actor = actor;
-		planeWidget->Modified();
-	}
+    resetCamera();
+    //reset actions
+    ui->actionDisplayOrientationWidget->setChecked(false);
+    ui->actionDisplayPlaneWidget->setChecked(false);
+    	
 	if (ui->actionDisplayBoxWidget->isChecked() == true)
 	{
 		boxWidget->GetRepresentation()->PlaceWidget(actor->GetBounds());
@@ -266,12 +299,11 @@ void MainWindow::open()
 		boxWidget->Modified();
 	}
 
-    resetCamera();
-
     // reset all other functions
     ui->noShape->setChecked(true);
     ui->noFilter->setChecked(true);
     ui->edgeCheck->setChecked(false);
+	
 	shapeActor = nullptr;
 }
 void MainWindow::openSTL(QString filename)
@@ -313,8 +345,8 @@ void MainWindow::openMOD(QString filename)
     Model loadMOD(filename.toStdString());
 
     //update model statistics
-    ui->pointLabel->setText(QVariant::fromValue(loadMOD.getNumberOfVertices()).toString());
-    ui->cellLabel->setText(QVariant::fromValue(loadMOD.getNumberOfCells()).toString());
+    ui->pointLabel->setText(QVariant(loadMOD.getNumberOfVertices()).toString());
+    ui->cellLabel->setText(QVariant(loadMOD.getNumberOfCells()).toString());
 
     vector<Tetrahedron> tetrData = loadMOD.getTetra();
     vector<Pyramid> pyramidData = loadMOD.getPyramid();
@@ -458,6 +490,13 @@ void MainWindow::openMOD(QString filename)
     }
     ui->openGLWidget->GetRenderWindow()->Render();
 
+	QMessageBox::StandardButton result = QMessageBox::question(this, "Conversion", "Convert this MOD file to STL file",
+		QMessageBox::Yes | QMessageBox::No, QMessageBox::Yes);
+	if (result == QMessageBox::Yes)
+	{
+		conversion(&loadMOD);
+	}
+
     // disable some functions
     ui->intensity->setEnabled(false);
     ui->intensitySlider->setEnabled(false);
@@ -488,9 +527,6 @@ void MainWindow::displayPlaneWidget(bool checked)
 {
     if(checked)
     {
-        rep->SetPlaceFactor(1.25);
-        rep->PlaceWidget(actor->GetBounds());
-        rep->SetNormal(plane->GetNormal());
         planeWidgetCallback->Plane = plane;
         planeWidgetCallback->Actor = actor;
         planeWidget->SetRepresentation(rep);
@@ -506,7 +542,7 @@ void MainWindow::displayBoxWidget(bool checked)
 {
     if(checked)
     {
-	   vtkSmartPointer<vtkActor> pActor = nullptr;
+	    	   vtkSmartPointer<vtkActor> pActor = nullptr;
 	   if (actor != nullptr)
 	   {
 		   pActor = actor;
@@ -519,9 +555,9 @@ void MainWindow::displayBoxWidget(bool checked)
 	   {
 		   return;
 	   }
-	   boxWidget->GetRepresentation()->SetPlaceFactor(1); // Default is 0.5
-       boxWidget->GetRepresentation()->PlaceWidget(pActor->GetBounds());
-       boxWidgetCallback->SetActor(pActor);
+       boxWidget->GetRepresentation()->SetPlaceFactor( 1 ); // Default is 0.5
+       boxWidget->GetRepresentation()->PlaceWidget(actor->GetBounds());
+       boxWidgetCallback->SetActor(actor);
        boxWidget->AddObserver( vtkCommand::InteractionEvent, boxWidgetCallback );
        boxWidget->On();
     }
@@ -667,6 +703,7 @@ void MainWindow::setBackgroundColor()
 void MainWindow::applyFilter(int buttonID)
 {
     ui->editFilterButton->setEnabled(true);
+    ui->actionDisplayPlaneWidget->setEnabled(false);
     switch(buttonID)
     {
     case 0:
@@ -679,9 +716,10 @@ void MainWindow::applyFilter(int buttonID)
     // apply clip filter
     case 1:
     {
-        plane = vtkSmartPointer<vtkPlane>::New();
-        plane->SetOrigin(0, 0, 0);
-        plane->SetNormal(-1, 0, 0);
+        ui->actionDisplayPlaneWidget->setEnabled(true);
+        rep->SetPlaceFactor(1.25);
+        rep->PlaceWidget(actor->GetBounds());
+        rep->SetNormal(plane->GetNormal());
         vtkSmartPointer<vtkClipDataSet> filter = vtkSmartPointer<vtkClipDataSet>::New();
         filter->SetInputConnection(STLReader->GetOutputPort());
         filter->SetClipFunction(plane.Get());
@@ -708,6 +746,8 @@ void MainWindow::applyFilter(int buttonID)
 // this function could add one of the primitive shapes
 void MainWindow::primitiveShape(int checked)
 {
+
+
     // remove all the actors
     renderer->RemoveActor(actor);
     for(shapeItor = primitiveShapeActor.begin(); shapeItor != primitiveShapeActor.end(); shapeItor++)
@@ -716,7 +756,7 @@ void MainWindow::primitiveShape(int checked)
     }
     // remove light
     renderer->RemoveLight(light);
-
+	
 	if(shapeActor == nullptr)
 		shapeActor = vtkSmartPointer<vtkActor>::New();
 
@@ -845,6 +885,7 @@ void MainWindow::primitiveShape(int checked)
     }
     }
 
+    ui->openGLWidget->GetRenderWindow()->Render();
 
     // disable some functions
     ui->intensity->setEnabled(false);
@@ -857,12 +898,12 @@ void MainWindow::primitiveShape(int checked)
     ui->clipfilter->setEnabled(false);
     ui->shrinkfilter->setEnabled(false);
     ui->resetCameraButton->setEnabled(true);
-	actor = nullptr;
-
+	
+    actor = nullptr;
     // reset all other functions
     ui->noFilter->setChecked(true);
     ui->edgeCheck->setChecked(false);
-
+	
 	if (ui->actionDisplayPlaneWidget->isChecked() == true)
 	{
 		planeWidget->GetRepresentation()->PlaceWidget(shapeActor->GetBounds());
@@ -891,4 +932,200 @@ void MainWindow::resetCamera()
 	//ui->openGLWidget->GetRenderWindow()->GetRenderers()->GetFirstRenderer()->GetActiveCamera()->Modified();
 	pRenderer->ResetCamera();
     ui->openGLWidget->GetRenderWindow()->Render();
+}
+
+void MainWindow::conversion(Model* loadMOD)
+{
+	QString filename = QFileDialog::getSaveFileName(this, "Save file", "./", "STL file (*.stl)");
+
+	vtkSmartPointer<vtkSTLWriter> write = vtkSmartPointer<vtkSTLWriter>::New();
+	write->SetFileName(filename.toStdString().c_str());
+
+        vector < vtkSmartPointer<vtkTriangle>> triangleVector;
+	size_t cellNum = loadMOD->getHex().size() + loadMOD->getPyramid().size() + loadMOD->getTetra().size();
+	int triangleNum = 0;
+	vector<Tetrahedron> tetrData = loadMOD->getTetra();
+	vector<Pyramid> pyramidData = loadMOD->getPyramid();
+	vector<Hexahedron> hexData = loadMOD->getHex();
+	vector<Vector> vectorData = loadMOD->getVector();
+
+	pointData->Initialize();
+
+	for (size_t i = 0; i < loadMOD->getVector().size(); i++)
+	{
+		double vertex[3] = { loadMOD->getVector()[i].get_i(), loadMOD->getVector()[i].get_j(), loadMOD->getVector()[i].get_k() };
+		pointData->InsertNextPoint(vertex);
+	}
+
+	for (size_t i = 0; i < loadMOD->getTetra().size(); i++)
+	{
+		vtkSmartPointer<vtkTriangle> triangle0 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle0);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, tetrData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, tetrData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, tetrData[i].getVectorNumber(vectorData, 2));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle1 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle1);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, tetrData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, tetrData[i].getVectorNumber(vectorData, 2));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, tetrData[i].getVectorNumber(vectorData, 3));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle2 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle2);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, tetrData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, tetrData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, tetrData[i].getVectorNumber(vectorData, 3));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle3 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle3);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, tetrData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, tetrData[i].getVectorNumber(vectorData, 2));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, tetrData[i].getVectorNumber(vectorData, 3));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+	}
+
+	for (size_t i = 0; i < loadMOD->getPyramid().size(); i++)
+	{
+		vtkSmartPointer<vtkTriangle> triangle0 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle0);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, pyramidData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, pyramidData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, pyramidData[i].getVectorNumber(vectorData, 4));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle1 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle1);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, pyramidData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, pyramidData[i].getVectorNumber(vectorData, 2));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, pyramidData[i].getVectorNumber(vectorData, 4));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle2 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle2);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, pyramidData[i].getVectorNumber(vectorData, 2));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, pyramidData[i].getVectorNumber(vectorData, 3));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, pyramidData[i].getVectorNumber(vectorData, 4));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle3 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle3);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, pyramidData[i].getVectorNumber(vectorData, 3));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, pyramidData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, pyramidData[i].getVectorNumber(vectorData, 4));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle4 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle4);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, pyramidData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, pyramidData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, pyramidData[i].getVectorNumber(vectorData, 3));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle5 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle5);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, pyramidData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, pyramidData[i].getVectorNumber(vectorData, 2));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, pyramidData[i].getVectorNumber(vectorData, 3));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+	}
+
+	for (size_t i = 0; i < loadMOD->getHex().size(); i++)
+	{
+		vtkSmartPointer<vtkTriangle> triangle0 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle0);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 5));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle1 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle1);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 4));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 5));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle2 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle2);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 2));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 6));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle3 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle3);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 5));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 6));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle4 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle4);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 2));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 3));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 7));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle5 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle5);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 2));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 6));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 7));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle6 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle6);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 3));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 4));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle7 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle7);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 3));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 7));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 4));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle8 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle8);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 1));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 2));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle9 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle9);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 0));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 3));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 2));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle10 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle10);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 4));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 5));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 6));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+
+		vtkSmartPointer<vtkTriangle> triangle11 = vtkSmartPointer<vtkTriangle>::New();
+		triangleVector.push_back(triangle11);
+		triangleVector[triangleNum]->GetPointIds()->SetId(0, hexData[i].getVectorNumber(vectorData, 4));
+		triangleVector[triangleNum]->GetPointIds()->SetId(1, hexData[i].getVectorNumber(vectorData, 7));
+		triangleVector[triangleNum]->GetPointIds()->SetId(2, hexData[i].getVectorNumber(vectorData, 6));
+		cell->InsertNextCell(triangleVector[triangleNum++]);
+	}
+
+	vtkSmartPointer<vtkPolyData> polyData = vtkSmartPointer<vtkPolyData>::New();
+	polyData->Initialize();
+	polyData->SetPolys(cell);
+	polyData->SetPoints(pointData);
+
+	write->SetInputData(polyData);
+	write->Update();
+	write->Write();
 }
