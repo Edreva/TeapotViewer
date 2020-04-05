@@ -271,6 +271,9 @@ void MainWindow::open()
     QString filter = "Model Files (*.stl *.mod)";
     // obtain the file name
     QString filename = QFileDialog::getOpenFileName(this, QString("Open STL file"), "./", filter);
+	
+	if (actor == nullptr)
+		actor = vtkSmartPointer<vtkActor>::New();
 
     if(filename.endsWith(".stl"))
         openSTL(filename);
@@ -288,12 +291,20 @@ void MainWindow::open()
     //reset actions
     ui->actionDisplayOrientationWidget->setChecked(false);
     ui->actionDisplayPlaneWidget->setChecked(false);
-    ui->actionDisplayBoxWidget->setChecked(false);
+    	
+	if (ui->actionDisplayBoxWidget->isChecked() == true)
+	{
+		boxWidget->GetRepresentation()->PlaceWidget(actor->GetBounds());
+		boxWidgetCallback->SetActor(actor);
+		boxWidget->Modified();
+	}
 
     // reset all other functions
     ui->noShape->setChecked(true);
     ui->noFilter->setChecked(true);
     ui->edgeCheck->setChecked(false);
+	
+	shapeActor = nullptr;
 }
 void MainWindow::openSTL(QString filename)
 {
@@ -531,6 +542,19 @@ void MainWindow::displayBoxWidget(bool checked)
 {
     if(checked)
     {
+	    	   vtkSmartPointer<vtkActor> pActor = nullptr;
+	   if (actor != nullptr)
+	   {
+		   pActor = actor;
+	   }
+	   else if (shapeActor != nullptr)
+	   {
+		   pActor = shapeActor;
+	   }
+	   else
+	   {
+		   return;
+	   }
        boxWidget->GetRepresentation()->SetPlaceFactor( 1 ); // Default is 0.5
        boxWidget->GetRepresentation()->PlaceWidget(actor->GetBounds());
        boxWidgetCallback->SetActor(actor);
@@ -732,6 +756,9 @@ void MainWindow::primitiveShape(int checked)
     }
     // remove light
     renderer->RemoveLight(light);
+	
+	if(shapeActor == nullptr)
+		shapeActor = vtkSmartPointer<vtkActor>::New();
 
     // render primitive shape selected by user
     switch(checked)
@@ -871,30 +898,40 @@ void MainWindow::primitiveShape(int checked)
     ui->clipfilter->setEnabled(false);
     ui->shrinkfilter->setEnabled(false);
     ui->resetCameraButton->setEnabled(true);
-
+	
+    actor = nullptr;
     // reset all other functions
     ui->noFilter->setChecked(true);
     ui->edgeCheck->setChecked(false);
+	
+	if (ui->actionDisplayPlaneWidget->isChecked() == true)
+	{
+		planeWidget->GetRepresentation()->PlaceWidget(shapeActor->GetBounds());
+		planeWidgetCallback->Actor = shapeActor;
+		planeWidget->Modified();
+	}
+	if (ui->actionDisplayBoxWidget->isChecked() == true)
+	{
+		boxWidget->GetRepresentation()->PlaceWidget(shapeActor->GetBounds());
+		boxWidgetCallback->SetActor(shapeActor);
+		boxWidget->Modified();
+	}
+
+	resetCamera();
 }
 
 // this function could reset camera
 void MainWindow::resetCamera()
 {
-    // set camera parameters
-    //renderer->ResetCameraClippingRange();
-    //renderer->ResetCamera();
-    //camera = renderer->GetActiveCamera();
-    camera->SetPosition(10, 0, 0);
-    camera->SetFocalPoint(0, 0, 0);
+	vtkSmartPointer<vtkRenderer> pRenderer = ui->openGLWidget->GetRenderWindow()->GetRenderers()->GetFirstRenderer();
+	vtkSmartPointer<vtkCamera> pCamera = pRenderer->GetActiveCamera();
 
-    camera->SetClippingRange(-10, 10);
-    camera->SetViewUp(0, 0, 0);
-
-    // set active camera for randerer
-    renderer->SetActiveCamera(camera);
-
+	pCamera->SetFocalPoint(0.0,0.0,0.0);
+	pCamera->SetPosition(0, 0, 1);
+	pCamera->SetViewUp(0, 1, 0);
+	//ui->openGLWidget->GetRenderWindow()->GetRenderers()->GetFirstRenderer()->GetActiveCamera()->Modified();
+	pRenderer->ResetCamera();
     ui->openGLWidget->GetRenderWindow()->Render();
-
 }
 
 void MainWindow::conversion(Model* loadMOD)

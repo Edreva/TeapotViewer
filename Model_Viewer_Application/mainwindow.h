@@ -43,6 +43,7 @@
 #include <vtkPyramid.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
+#include <vtkRendererCollection.h>
 #include <vtkSTLReader.h>
 #include <vtkSTLWriter.h>
 #include <vtkShrinkFilter.h>
