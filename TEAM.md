@@ -1,6 +1,6 @@
-# Team Members and Roles  
-- Ewan Drever-Smith -- Team Leader/Model  
-- Anthony Gleria Cooke -- Vector  
-- Aakash Rawal -- Unassigned  
-- Vorrapol Gundthanachart -- Material  
-- Wenxiang Luo -- Cell  
+# Team Members
+- Ewan Drever-Smith -- Team Leader
+- Anthony Gleria Cooke
+- Aakash Rawal
+- Vorrapol Gundthanachart
+- Wenxiang Luo
