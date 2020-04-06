@@ -18,13 +18,3 @@ cmake -G "Visual Studio 16 2019" ..
 ```cmd
 msbuild Group32ModelViewer.sln
 ```
-
-## Doxygen Setup
-Ensure doxygen is installed on your system and is in your path. It can be downloaded from here: http://www.doxygen.nl/download.html   
-**1. Navigate to root of Model_Loading_Library**  
-`cd Model_Loading_Library`  
-**2. Run doxygen**  
-`doxygen`  
-**3. Open index.html**  
-*Windows:*`html/index.html`  
-*Linux:*`[your browser] html/index.html`
