@@ -1,3 +1,4 @@
+#This CMakeLists.txt generates the main application's executable as well as calls the other cmakelists to run
 cmake_minimum_required(VERSION 3.12.0)
 
 foreach(p
@@ -30,7 +31,7 @@ qt5_wrap_ui( UI_Srcs ${UIS} )
 find_package( VTK REQUIRED )
 include( ${VTK_USE_FILE} )
 
-#Add subdirectories containing cmake lists
+#Add subdirectories containing cmake lists and runs their contents
 add_subdirectory("Model_Loading_Library")
 add_subdirectory("Model_Viewer_Application")
 
@@ -40,12 +41,13 @@ add_executable( ModelViewerApp MACOSX_BUNDLE
 		Model_Viewer_Application/mainwindow.cpp
 		Model_Viewer_Application/mainwindow.h
 		Model_Viewer_Application/mainwindow.ui	
-    		Model_Viewer_Application/dialogeditshrinkfilter.h 									Model_Viewer_Application/dialogeditshrinkfilter.cpp
+    		Model_Viewer_Application/dialogeditshrinkfilter.h
+		Model_Viewer_Application/dialogeditshrinkfilter.cpp
 		Model_Viewer_Application/dialogeditshrinkfilter.ui
 		${UI_Srcs}
 		${QRC_Srcs}
 		)
-
+# Tell CMake that the executable depends on our class library
 target_link_libraries( ModelViewerApp Model_Loading_Library )
 
 # Tell CMake that the executable depends on the Qt::Widget libraries.

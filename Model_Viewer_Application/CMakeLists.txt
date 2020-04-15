@@ -1,7 +1,10 @@
+#This CMakeLists ensures that any assets required by the application are copied to the location of the binaries so that they can be accessed at runtime
+
 cmake_minimum_required(VERSION 3.12.0)
 
 project(Group32ModelViewer)
 
+#MSVC puts binaries inside Debug subdirectory whilst other known compilers do not. The following conditional checks the compiler being used and ensures that the necessary resources are copied to the correct location.
 if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 	FILE(COPY Resources/splashscreen.png DESTINATION "${CMAKE_BINARY_DIR}/Debug")
 	FILE(COPY Resources/openIcon.png DESTINATION "${CMAKE_BINARY_DIR}/Debug")
