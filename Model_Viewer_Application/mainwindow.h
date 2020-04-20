@@ -39,6 +39,7 @@
 #include <vtkPoints.h>
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
+#include <vtkPolyDataNormals.h>
 #include <vtkProperty.h>
 #include <vtkPyramid.h>
 #include <vtkRenderWindow.h>
@@ -48,6 +49,7 @@
 #include <vtkSTLWriter.h>
 #include <vtkShrinkFilter.h>
 #include <vtkSmartPointer.h>
+#include <vtkSmoothPolyDataFilter.h>
 #include <vtkTetra.h>
 #include <vtkTransform.h>
 #include <vtkTriangle.h>
@@ -171,8 +173,9 @@ private:
     vtkSmartPointer<vtkPlaneWidgetCallback> planeWidgetCallback;
     vtkSmartPointer<vtkImplicitPlaneRepresentation> rep;
     vtkSmartPointer<vtkShrinkFilter> shrinkFilter;
-  	vtkSmartPointer<vtkCellArray> cell;
-	  vtkSmartPointer<vtkPoints> pointData;
+    vtkSmartPointer<vtkSmoothPolyDataFilter> smoothFilter;
+    vtkSmartPointer<vtkCellArray> cell;
+    vtkSmartPointer<vtkPoints> pointData;
     
     dialogEditShrinkFilter *shrinkFilterDialog;
 

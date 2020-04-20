@@ -159,6 +159,7 @@ MainWindow::MainWindow(QWidget *parent)
     filterButton->addButton(ui->noFilter, 0);
     filterButton->addButton(ui->clipfilter, 1);
     filterButton->addButton(ui->shrinkfilter, 2);
+    filterButton->addButton(ui->smoothFilter, 3);
 
     // create a button group for radio vuttons (primitive shape)
     QButtonGroup* shapeButton = new QButtonGroup(this);
@@ -345,8 +346,8 @@ void MainWindow::openMOD(QString filename)
     Model loadMOD(filename.toStdString());
 
     //update model statistics
-    ui->pointLabel->setText(QVariant(loadMOD.getNumberOfVertices()).toString());
-    ui->cellLabel->setText(QVariant(loadMOD.getNumberOfCells()).toString());
+    ui->pointLabel->setText(QVariant(int(loadMOD.getNumberOfVertices())).toString());
+    ui->cellLabel->setText(QVariant(int(loadMOD.getNumberOfCells())).toString());
 
     vector<Tetrahedron> tetrData = loadMOD.getTetra();
     vector<Pyramid> pyramidData = loadMOD.getPyramid();
@@ -731,12 +732,32 @@ void MainWindow::applyFilter(int buttonID)
     case 2:
     {
         shrinkFilter = vtkSmartPointer<vtkShrinkFilter>::New();
+        mapper->SetInputConnection(shrinkFilter->GetOutputPort());
         shrinkFilter->SetInputConnection(STLReader->GetOutputPort());
         shrinkFilter->SetShrinkFactor(0.9);
         shrinkFilter->Update();
-        mapper->SetInputConnection(shrinkFilter->GetOutputPort());
+
         actor->SetMapper(mapper);
         break;
+    }
+    case 3:
+    {
+        smoothFilter = vtkSmartPointer<vtkSmoothPolyDataFilter>::New();
+        smoothFilter->SetInputConnection(STLReader->GetOutputPort());
+        smoothFilter->SetNumberOfIterations(15);
+        smoothFilter->SetRelaxationFactor(0.1);
+        smoothFilter->FeatureEdgeSmoothingOff();
+        smoothFilter->BoundarySmoothingOn();
+        smoothFilter->Update();
+        vtkSmartPointer<vtkPolyDataNormals> normalGenerator = vtkSmartPointer<vtkPolyDataNormals>::New();
+        normalGenerator->SetInputConnection(smoothFilter->GetOutputPort());
+        normalGenerator->ComputePointNormalsOn();
+        normalGenerator->ComputeCellNormalsOn();
+        normalGenerator->Update();
+
+        mapper->SetInputConnection(normalGenerator->GetOutputPort());
+        actor->SetMapper(mapper);
+        ui->editFilterButton->setEnabled(false);
     }
     }
 
