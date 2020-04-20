@@ -7,7 +7,40 @@
 #include <stdlib.h>
 #include <cmath>
 #include <sstream>
+#include <algorithm>
+#include <iterator>
+#include <string>
+#include <fstream>
 using namespace std;
+
+template<typename InputIterator1, typename InputIterator2>
+bool
+rangeEqual(InputIterator1 first1, InputIterator1 last1, InputIterator2 first2, InputIterator2 last2)
+{
+    while(first1 != last1 && first2 != last2)
+    {
+        if(*first1 != *first2) 
+            return false;
+        ++first1;
+        ++first2;
+    }
+    return (first1 == last1) && (first2 == last2);
+}
+
+bool compareFiles(const string& filename1, const string& filename2)
+{
+    ifstream file1(filename1);
+    ifstream file2(filename2);
+
+    istreambuf_iterator<char> begin1(file1);
+    istreambuf_iterator<char> begin2(file2);
+
+    istreambuf_iterator<char> end;
+
+    return rangeEqual(begin1, end, begin2, end);
+}
+
+
 int main(int argc, char *argv[])
 {
     //test constructors
@@ -31,14 +64,15 @@ int main(int argc, char *argv[])
                     && abs(testMod.getDepth() - 0.0325) < epsilon && testMod.getModelCentre() == testModCentre
                     && abs(testMod.getModelWeight() - 0.00228159) < epsilon && testMod.getNumberOfVertices() == 301 
                     && testMod.getNumberOfCells() == 129 && testMod.getNumberOfMaterials() == 2);
+    testMod.saveModel("GoldenFile.mod");
+    testMod.saveModel("tempTestFile.mod");
+    bool SAVE_STATUS = compareFiles("GoldenFile.mod","tempTestFile.mod");
+    remove("tempTestFile.mod");
     //test model
     //test display functions
-    testMod.displayDimensions();
-    //testMod.displayVertices();
-    //testMod.displayCells();
-    //testMod.displayMaterials();
     //cout << "Saving to file..." << endl;
     //testMod.saveModel("newModel.mod");
     //cout << "Model saved as newModel.mod" << endl;
-    return (OUT_OP_STATUS && GET_STATUS) ? 0 : 1;
+    return (OUT_OP_STATUS && GET_STATUS && SAVE_STATUS) ? 0 : 1;
 }
+
