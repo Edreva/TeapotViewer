@@ -7,11 +7,11 @@
 ```cmd
 mkdir build
 ```
-**2. Generate cmake files in build directory**  
+**2. Generate cmake files in build directory - Must ensure that CMake is passed the location of Qt and VTK binaries**  
 *Example using MSVC*
 ```cmd
 cd build
-cmake -G "Visual Studio 16 2019" ..
+cmake -DCMAKE_PREFIX_PATH=C:\path\to\Qt\bin;C:\path\to\VTK\bin" -G "Visual Studio 16 2019" ..
 ```
 **3. Generate binaries using chosen compiler**  
 *Example using MSVC*
