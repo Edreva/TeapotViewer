@@ -160,6 +160,7 @@ MainWindow::MainWindow(QWidget *parent)
     filterButton->addButton(ui->clipfilter, 1);
     filterButton->addButton(ui->shrinkfilter, 2);
     filterButton->addButton(ui->smoothFilter, 3);
+    filterButton->addButton(ui->curvatureFilter, 4);
 
     // create a button group for radio vuttons (primitive shape)
     QButtonGroup* shapeButton = new QButtonGroup(this);
@@ -266,6 +267,7 @@ void MainWindow::open()
     }
     renderer->RemoveActor(shapeActor);
     renderer->RemoveActor(actor);
+    renderer->RemoveActor(scalarBar);
     ui->noShape->setChecked(true);
 
     // set the filter for STL file
@@ -705,6 +707,7 @@ void MainWindow::applyFilter(int buttonID)
 {
     ui->editFilterButton->setEnabled(true);
     ui->actionDisplayPlaneWidget->setEnabled(false);
+    renderer->RemoveActor(scalarBar);
     switch(buttonID)
     {
     case 0:
@@ -740,9 +743,10 @@ void MainWindow::applyFilter(int buttonID)
         actor->SetMapper(mapper);
         break;
     }
+    //apply smooth filter
     case 3:
     {
-        smoothFilter = vtkSmartPointer<vtkSmoothPolyDataFilter>::New();
+        vtkSmartPointer<vtkSmoothPolyDataFilter> smoothFilter = vtkSmartPointer<vtkSmoothPolyDataFilter>::New();
         smoothFilter->SetInputConnection(STLReader->GetOutputPort());
         smoothFilter->SetNumberOfIterations(15);
         smoothFilter->SetRelaxationFactor(0.1);
@@ -759,6 +763,51 @@ void MainWindow::applyFilter(int buttonID)
         actor->SetMapper(mapper);
         ui->editFilterButton->setEnabled(false);
     }
+    //apply curvature filter
+    case 4:
+    {
+        curvatureFilter = vtkSmartPointer<vtkCurvatures>::New();
+        curvatureFilter->SetInputConnection(STLReader->GetOutputPort());
+        curvatureFilter->SetCurvatureTypeToMinimum();
+        curvatureFilter->SetCurvatureTypeToMaximum();
+        curvatureFilter->SetCurvatureTypeToGaussian();
+        curvatureFilter->SetCurvatureTypeToMean();
+        curvatureFilter->Update();
+        double scalarRange[2];
+        curvatureFilter->GetOutput()->GetScalarRange(scalarRange);
+
+        // Build a lookup table
+        int scheme = 16;
+        vtkSmartPointer<vtkColorSeries> colorSeries = vtkSmartPointer<vtkColorSeries>::New();
+        colorSeries->SetColorScheme(scheme);
+
+        vtkSmartPointer<vtkColorTransferFunction> lut = vtkSmartPointer<vtkColorTransferFunction>::New();
+        lut->SetColorSpaceToHSV();
+
+        // Use a color series to create a transfer function
+        int numColors = colorSeries->GetNumberOfColors();
+        for (int i = 0; i < numColors; i++)
+        {
+            vtkColor3ub color = colorSeries->GetColor(i);
+            double dColor[3];
+            dColor[0] = static_cast<double> (color[0]) / 255.0;
+            dColor[1] = static_cast<double> (color[1]) / 255.0;
+            dColor[2] = static_cast<double> (color[2]) / 255.0;
+            double t = scalarRange[0] + (scalarRange[1] - scalarRange[0]) / (numColors - 1) * i;
+            lut->AddRGBPoint(t, dColor[0], dColor[1], dColor[2]);
+        }
+        mapper->SetInputConnection(curvatureFilter->GetOutputPort());
+        mapper->SetLookupTable(lut);
+        mapper->SetScalarRange(scalarRange);
+        actor->SetMapper(mapper);
+
+        scalarBar =  vtkSmartPointer<vtkScalarBarActor>::New();
+        scalarBar->SetLookupTable(mapper->GetLookupTable());
+        scalarBar->SetTitle(curvatureFilter->GetOutput()->GetPointData()->GetScalars()->GetName());
+        scalarBar->SetNumberOfLabels(5);
+
+        renderer->AddActor2D(scalarBar);
+    }
     }
 
     ui->openGLWidget->GetRenderWindow()->Render();
@@ -771,6 +820,7 @@ void MainWindow::primitiveShape(int checked)
 
     // remove all the actors
     renderer->RemoveActor(actor);
+    renderer->RemoveActor(scalarBar);
     for(shapeItor = primitiveShapeActor.begin(); shapeItor != primitiveShapeActor.end(); shapeItor++)
     {
         renderer->RemoveActor(*shapeItor);

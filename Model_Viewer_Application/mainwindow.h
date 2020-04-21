@@ -23,6 +23,9 @@
 #include <vtkCamera.h>
 #include <vtkCellArray.h>
 #include <vtkClipDataSet.h>
+#include <vtkColorSeries.h>
+#include <vtkColorTransferFunction.h>
+#include <vtkCurvatures.h>
 #include <vtkCommand.h>
 #include <vtkDataSetMapper.h>
 #include <vtkGenericOpenGLRenderWindow.h>
@@ -30,12 +33,14 @@
 #include <vtkImplicitPlaneWidget2.h>
 #include <vtkImplicitPlaneRepresentation.h>
 #include <vtkLight.h>
+#include <vtkLookupTable.h>
 #include <vtkNamedColors.h>
 #include <vtkNew.h>
 #include <vtkOrientationMarkerWidget.h>
 #include <vtkPlane.h>
 #include <vtkPlaneWidget.h>
 #include <vtkPNGWriter.h>
+#include <vtkPointData.h>
 #include <vtkPoints.h>
 #include <vtkPolyData.h>
 #include <vtkPolyDataMapper.h>
@@ -45,11 +50,12 @@
 #include <vtkRenderWindow.h>
 #include <vtkRenderer.h>
 #include <vtkRendererCollection.h>
-#include <vtkSTLReader.h>
-#include <vtkSTLWriter.h>
+#include <vtkScalarBarActor.h>
 #include <vtkShrinkFilter.h>
 #include <vtkSmartPointer.h>
 #include <vtkSmoothPolyDataFilter.h>
+#include <vtkSTLReader.h>
+#include <vtkSTLWriter.h>
 #include <vtkTetra.h>
 #include <vtkTransform.h>
 #include <vtkTriangle.h>
@@ -158,6 +164,7 @@ private:
     vtkSmartPointer<vtkSTLReader> STLReader;
     vtkSmartPointer<vtkRenderer> renderer;
     vtkSmartPointer<vtkActor> actor;
+    vtkSmartPointer<vtkScalarBarActor> scalarBar;
     vtkNew<vtkGenericOpenGLRenderWindow> renderWindow;
     vtkSmartPointer<vtkLight> light;
     vtkSmartPointer<vtkNamedColors> color;
@@ -173,7 +180,7 @@ private:
     vtkSmartPointer<vtkPlaneWidgetCallback> planeWidgetCallback;
     vtkSmartPointer<vtkImplicitPlaneRepresentation> rep;
     vtkSmartPointer<vtkShrinkFilter> shrinkFilter;
-    vtkSmartPointer<vtkSmoothPolyDataFilter> smoothFilter;
+    vtkSmartPointer<vtkCurvatures> curvatureFilter;
     vtkSmartPointer<vtkCellArray> cell;
     vtkSmartPointer<vtkPoints> pointData;
     

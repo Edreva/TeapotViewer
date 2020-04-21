@@ -181,6 +181,9 @@
           <property name="text">
            <string>Filters</string>
           </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+          </property>
          </widget>
         </item>
         <item>
@@ -198,6 +201,13 @@
              <widget class="QRadioButton" name="clipfilter">
               <property name="text">
                <string>Clip Filter</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QRadioButton" name="curvatureFilter">
+              <property name="text">
+               <string>Curvature Filter</string>
               </property>
              </widget>
             </item>
