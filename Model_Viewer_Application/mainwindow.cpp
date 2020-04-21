@@ -146,6 +146,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->noFilter->setEnabled(false);
     ui->clipfilter->setEnabled(false);
     ui->shrinkfilter->setEnabled(false);
+    ui->smoothFilter->setEnabled(false);
+    ui->curvatureFilter->setEnabled(false);
     ui->resetCameraButton->setEnabled(false);
     ui->editFilterButton->setEnabled(false);
 
@@ -768,16 +770,16 @@ void MainWindow::applyFilter(int buttonID)
     {
         curvatureFilter = vtkSmartPointer<vtkCurvatures>::New();
         curvatureFilter->SetInputConnection(STLReader->GetOutputPort());
-        curvatureFilter->SetCurvatureTypeToMinimum();
-        curvatureFilter->SetCurvatureTypeToMaximum();
-        curvatureFilter->SetCurvatureTypeToGaussian();
+        //curvatureFilter->SetCurvatureTypeToMinimum();
+        //curvatureFilter->SetCurvatureTypeToMaximum();
+        //curvatureFilter->SetCurvatureTypeToGaussian();
         curvatureFilter->SetCurvatureTypeToMean();
         curvatureFilter->Update();
         double scalarRange[2];
         curvatureFilter->GetOutput()->GetScalarRange(scalarRange);
 
         // Build a lookup table
-        int scheme = 16;
+        int scheme = 16; //selects colour scheme 16
         vtkSmartPointer<vtkColorSeries> colorSeries = vtkSmartPointer<vtkColorSeries>::New();
         colorSeries->SetColorScheme(scheme);
 
