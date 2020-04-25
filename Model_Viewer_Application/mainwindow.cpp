@@ -229,7 +229,6 @@ void MainWindow::loadFilterEditor()
     switch(filterButton->checkedId())
     {
     case 0 :
-        ui->actionDisplayPlaneWidget->setChecked(false);
         break;
     case 1 :
         if(ui->actionDisplayPlaneWidget->isChecked())
@@ -238,9 +237,12 @@ void MainWindow::loadFilterEditor()
             ui->actionDisplayPlaneWidget->setChecked(true);
         break;
     case 2 :
-        ui->actionDisplayPlaneWidget->setChecked(false);
         loadShrinkFilterDialog();
         break;
+    case 3 :
+       break;
+    case 4 :
+        loadCurvatureFilterDialog();
     }
 }
 //function to load dialog widget and link its signal to a function which edits the shrink filter
@@ -251,6 +253,14 @@ void MainWindow::loadShrinkFilterDialog()
     shrinkFilterDialog->show();
     return;
 }
+//
+void MainWindow::loadCurvatureFilterDialog()
+{
+    DialogEditCurvatureFilter *curvatureFilterDialog(new DialogEditCurvatureFilter(this, previousMinLim, previousMaxLim, previousType, previousScheme));
+    connect(curvatureFilterDialog, SIGNAL(valuesChanged(int,int,int,int)), this, SLOT(editCurvatureFilter(int,int,int,int)));
+    curvatureFilterDialog->show();
+    return;
+}
 //This function allows the properties of the shrink filter to be changed.
 void MainWindow::editShrinkFilter(double shrinkFactor)
 {
@@ -258,6 +268,64 @@ void MainWindow::editShrinkFilter(double shrinkFactor)
     shrinkFilter->Update();
     ui->openGLWidget->GetRenderWindow()->Render();
     return;
+}
+//edit curvature filter params -> Min, Max, Type, Colour Scheme
+//function to handle the change of the curvature filter's minimum and maximum scalar limit
+void MainWindow::editCurvatureFilter(int minLim, int maxLim, int type, int scheme)
+{
+    previousMinLim = minLim;
+    previousMaxLim = maxLim;
+    previousType = type;
+    previousScheme = scheme;
+    switch (type) //TODO change int type to enum for better clarity
+    {
+    case 0:
+        curvatureFilter->SetCurvatureTypeToMinimum();
+        break;
+    case 1:
+        curvatureFilter->SetCurvatureTypeToMaximum();
+        break;
+    case 2:
+        curvatureFilter->SetCurvatureTypeToGaussian();
+        break;
+    case 3:
+        curvatureFilter->SetCurvatureTypeToMean();
+        break;
+    }
+    curvatureFilter->Update();
+
+    vtkSmartPointer<vtkColorSeries> colorSeries = vtkSmartPointer<vtkColorSeries>::New();
+    colorSeries->SetColorScheme(scheme);
+
+    vtkSmartPointer<vtkColorTransferFunction> lut = vtkSmartPointer<vtkColorTransferFunction>::New();
+    lut->SetColorSpaceToHSV();
+
+    // Use a color series to create a transfer function
+    int numColors = colorSeries->GetNumberOfColors();
+    for (int i = 0; i < numColors; i++)
+    {
+        vtkColor3ub color = colorSeries->GetColor(i);
+        double dColor[3];
+        dColor[0] = static_cast<double> (color[0]) / 255.0;
+        dColor[1] = static_cast<double> (color[1]) / 255.0;
+        dColor[2] = static_cast<double> (color[2]) / 255.0;
+        double t = minLim + (maxLim - minLim) / (numColors - 1) * i;
+        lut->AddRGBPoint(t, dColor[0], dColor[1], dColor[2]);
+    }
+
+    mapper->SetLookupTable(lut);
+    mapper->SetScalarRange(minLim, maxLim);
+    //actor->SetMapper(mapper);
+    renderer->RemoveActor2D(scalarBar);
+    scalarBar =  vtkSmartPointer<vtkScalarBarActor>::New();
+    scalarBar->SetLookupTable(mapper->GetLookupTable());
+    scalarBar->SetTitle(curvatureFilter->GetOutput()->GetPointData()->GetScalars()->GetName());
+    scalarBar->SetNumberOfLabels(5);
+
+    renderer->AddActor2D(scalarBar);
+
+    //do i make curvature filter a private var or just generate new one each time a change is made
+    ui->openGLWidget->GetRenderWindow()->Render();
 }
 // this function would load the STL file
 void MainWindow::open()
@@ -342,6 +410,8 @@ void MainWindow::openSTL(QString filename)
     ui->noFilter->setEnabled(true);
     ui->clipfilter->setEnabled(true);
     ui->shrinkfilter->setEnabled(true);
+    ui->curvatureFilter->setEnabled(true);
+    ui->smoothFilter->setEnabled(true);
     ui->resetCameraButton->setEnabled(true);
 }
 void MainWindow::openMOD(QString filename)
@@ -512,6 +582,8 @@ void MainWindow::openMOD(QString filename)
     ui->noFilter->setEnabled(false);
     ui->clipfilter->setEnabled(false);
     ui->shrinkfilter->setEnabled(false);
+    ui->curvatureFilter->setEnabled(false);
+    ui->smoothFilter->setEnabled(false);
     ui->resetCameraButton->setEnabled(true);
 }
 // This function will display the orientation widget
@@ -527,7 +599,6 @@ void MainWindow::displayOrientationWidget(bool checked)
     ui->openGLWidget->GetRenderWindow()->Render();
 }
 // This function displays the plane widget
-//TODO_1 fix so that widget isnt so tiny when added
 void MainWindow::displayPlaneWidget(bool checked)
 {
     if(checked)
@@ -710,6 +781,7 @@ void MainWindow::applyFilter(int buttonID)
     ui->editFilterButton->setEnabled(true);
     ui->actionDisplayPlaneWidget->setEnabled(false);
     renderer->RemoveActor(scalarBar);
+    ui->actionDisplayPlaneWidget->setChecked(false);
     switch(buttonID)
     {
     case 0:
@@ -764,6 +836,7 @@ void MainWindow::applyFilter(int buttonID)
         mapper->SetInputConnection(normalGenerator->GetOutputPort());
         actor->SetMapper(mapper);
         ui->editFilterButton->setEnabled(false);
+        break;
     }
     //apply curvature filter
     case 4:
@@ -809,6 +882,7 @@ void MainWindow::applyFilter(int buttonID)
         scalarBar->SetNumberOfLabels(5);
 
         renderer->AddActor2D(scalarBar);
+        break;
     }
     }
 
@@ -970,6 +1044,8 @@ void MainWindow::primitiveShape(int checked)
     ui->noFilter->setEnabled(false);
     ui->clipfilter->setEnabled(false);
     ui->shrinkfilter->setEnabled(false);
+    ui->curvatureFilter->setEnabled(false);
+    ui->smoothFilter->setEnabled(false);
     ui->resetCameraButton->setEnabled(true);
 	
     actor = nullptr;

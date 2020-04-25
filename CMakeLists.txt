@@ -37,13 +37,16 @@ add_subdirectory("Model_Viewer_Application")
 
 #Create the executable using application source files
 add_executable( ModelViewerApp MACOSX_BUNDLE
-		Model_Viewer_Application/main.cpp 
+		Model_Viewer_Application/main.cpp
 		Model_Viewer_Application/mainwindow.cpp
 		Model_Viewer_Application/mainwindow.h
-		Model_Viewer_Application/mainwindow.ui	
-    		Model_Viewer_Application/dialogeditshrinkfilter.h
+		Model_Viewer_Application/mainwindow.ui
+    Model_Viewer_Application/dialogeditshrinkfilter.h
 		Model_Viewer_Application/dialogeditshrinkfilter.cpp
 		Model_Viewer_Application/dialogeditshrinkfilter.ui
+    Model_Viewer_Application/dialogeditcurvaturefilter.h
+		Model_Viewer_Application/dialogeditcurvaturefilter.cpp
+		Model_Viewer_Application/dialogeditcurvaturefilter.ui
 		${UI_Srcs}
 		${QRC_Srcs}
 		)

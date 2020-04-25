@@ -78,6 +78,7 @@
 
 //Dialog Boxes
 #include "dialogeditshrinkfilter.h"
+#include "dialogeditcurvaturefilter.h"
 
 using std::vector;
 using std::unique_ptr;
@@ -149,14 +150,18 @@ public slots:
     //Functions for opening different file types
     void openMOD(QString);
     void openSTL(QString);
-    //function to open the filter editor dialog box
+    //function to open the shrink filter editor dialog box
     void loadShrinkFilterDialog();
+    //function to open the curvature filter editor dialog box
+    void loadCurvatureFilterDialog();
     // convert MOD to STL
     void conversion(Model*);
     //function to select which filter editor dialog to open
     void loadFilterEditor();
     //function to allow the user to save a screenshot
     void handleScreenshot();
+    //function to handle the change of the curvature filter's properties
+    void editCurvatureFilter(int,int,int,int);
 
 private:
     Ui::MainWindow *ui;
@@ -190,7 +195,10 @@ private:
     double intensity; // store the intensity of light
     vector<vtkSmartPointer<vtkActor>> primitiveShapeActor; // store all the actor for primitive shape
     vector<vtkSmartPointer<vtkActor>>::const_iterator shapeItor; // iterator for primitive shape
-
+    int previousMinLim;
+    int previousMaxLim;
+    int previousType;
+    int previousScheme;
     QButtonGroup* filterButton; //button group to link radio buttons for the filter
 };
 #endif // MAINWINDOW_H
