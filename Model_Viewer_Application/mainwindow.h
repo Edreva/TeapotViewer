@@ -22,6 +22,7 @@
 #include <vtkBoxWidget2.h>
 #include <vtkCamera.h>
 #include <vtkCellArray.h>
+#include <vtkCenterOfMass.h>
 #include <vtkClipDataSet.h>
 #include <vtkColorSeries.h>
 #include <vtkColorTransferFunction.h>
@@ -81,7 +82,6 @@
 #include "dialogeditcurvaturefilter.h"
 
 using std::vector;
-using std::unique_ptr;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -89,7 +89,7 @@ QT_END_NAMESPACE
 
 
 //Callback functions
-
+///@brief Class for providing a callback function enabling boxwidget functionality
 class vtkBoxWidgetCallback : public vtkCommand
 {
 public:
@@ -98,7 +98,7 @@ public:
   virtual void Execute( vtkObject *caller, unsigned long, void* );
   vtkSmartPointer<vtkActor> m_actor;
 };
-
+///@brief Class for providing a callback function enabling plane widget functionality
 class vtkPlaneWidgetCallback : public vtkCommand
 {
 public:
@@ -108,22 +108,29 @@ public:
     vtkPlane *Plane;
     vtkActor *Actor;
 };
-
+///@brief Class for creating the main window object
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
+    ///@brief Default Constructor
+    ///@param parent Specifies the parent widget to this window, if there is one
     MainWindow(QWidget *parent = nullptr);
+    ///@brief Default Deconstructor
     ~MainWindow();
-
 public slots:
-    // open the STL file
+    ///@brief Allows user to choose a file (.mod or .stl) to open using file dialog
+    ///@note resets actions, radiobuttons and checkboxes to their default state
     void open();
-    // set the color of the light
+    ///@brief Allows user to select the colour of the camera light by opening a colour picker dialog boxWidget
+    ///@note Also enables the remove light button
     void setLightColor();
-    // set the intensity of the light
+    ///@brief Updates the intensity of the light
+    ///@note Updates position of slider to match updated value
     void setLightIntensitySpinBox();
+    ///@brief Updates the intensity of the light
+    ///@note Updates spin box to match updated value
     void setLightIntensitySlider();
     // reset the light
     void resetLight();
@@ -188,7 +195,7 @@ private:
     vtkSmartPointer<vtkCurvatures> curvatureFilter;
     vtkSmartPointer<vtkCellArray> cell;
     vtkSmartPointer<vtkPoints> pointData;
-    
+
     dialogEditShrinkFilter *shrinkFilterDialog;
 
     vector<double> value; // store the RGB value of light

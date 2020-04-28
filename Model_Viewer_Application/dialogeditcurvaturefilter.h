@@ -26,7 +26,8 @@ public slots:
     void handleMaxSlider(int);
     //Function that updates the stored value for scheme based on the scheme spin box interaction
     void handleSchemeSpinBox(int);
-    //TODO type combobox handler function
+    //Function that updates the stored value for type based on the currently selected option in the combo box
+    void handleTypeComboBox(int);
 
 signals:
     void valuesChanged(int min, int max, int type, int scheme);

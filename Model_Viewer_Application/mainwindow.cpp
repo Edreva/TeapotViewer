@@ -344,7 +344,7 @@ void MainWindow::open()
     QString filter = "Model Files (*.stl *.mod)";
     // obtain the file name
     QString filename = QFileDialog::getOpenFileName(this, QString("Open STL file"), "./", filter);
-	
+
 	if (actor == nullptr)
 		actor = vtkSmartPointer<vtkActor>::New();
 
@@ -364,7 +364,7 @@ void MainWindow::open()
     //reset actions
     ui->actionDisplayOrientationWidget->setChecked(false);
     ui->actionDisplayPlaneWidget->setChecked(false);
-    	
+
 	if (ui->actionDisplayBoxWidget->isChecked() == true)
 	{
 		boxWidget->GetRepresentation()->PlaceWidget(actor->GetBounds());
@@ -376,7 +376,7 @@ void MainWindow::open()
     ui->noShape->setChecked(true);
     ui->noFilter->setChecked(true);
     ui->edgeCheck->setChecked(false);
-	
+
 	shapeActor = nullptr;
 }
 void MainWindow::openSTL(QString filename)
@@ -387,13 +387,37 @@ void MainWindow::openSTL(QString filename)
 
     mapper->SetInputConnection(STLReader->GetOutputPort());
 
-    // set properties and date of the actor
+    // set properties and data of the actor
     actor->SetMapper(mapper);
     actor->GetProperty()->SetColor(color->GetColor3d("Blue").GetData());
+
+    // Calculate centre of mass of the object
+    vtkSmartPointer<vtkCenterOfMass> centerOfMass = vtkSmartPointer<vtkCenterOfMass>::New();
+    centerOfMass->SetInputData(mapper->GetInput());
+    centerOfMass->SetUseScalarsAsWeights(false);
+    centerOfMass->Update();
+    double com[3];
+    centerOfMass->GetCenter(com);
+
+    //Create string containing rounded centre of mass to display on gui
+    QString center = QString::number(com[0],'f',1);
+    center.append(", ");
+    center.append(QString::number(com[1],'f',1));
+    center.append(", ");
+    center.append(QString::number(com[2],'f',1));
+
+    //create string containing precise centre of mass to display as tooltip
+    QString preciseCenter = QString::number(com[0]);
+    preciseCenter.append(", ");
+    preciseCenter.append(QString::number(com[1]));
+    preciseCenter.append(", ");
+    preciseCenter.append(QString::number(com[2]));
 
     //update model statistics
     ui->pointLabel->setText(QVariant(mapper->GetInput()->GetNumberOfPoints()).toString());
     ui->cellLabel->setText(QVariant(mapper->GetInput()->GetNumberOfCells()).toString());
+    ui->centreLabel->setText(center);
+    ui->centreLabel->setToolTip(preciseCenter);
 
     // render the actor
     renderer->AddActor(actor);
@@ -843,16 +867,17 @@ void MainWindow::applyFilter(int buttonID)
     {
         curvatureFilter = vtkSmartPointer<vtkCurvatures>::New();
         curvatureFilter->SetInputConnection(STLReader->GetOutputPort());
-        //curvatureFilter->SetCurvatureTypeToMinimum();
-        //curvatureFilter->SetCurvatureTypeToMaximum();
-        //curvatureFilter->SetCurvatureTypeToGaussian();
-        curvatureFilter->SetCurvatureTypeToMean();
+        curvatureFilter->SetCurvatureTypeToGaussian();
+        previousType = 2;
         curvatureFilter->Update();
         double scalarRange[2];
         curvatureFilter->GetOutput()->GetScalarRange(scalarRange);
+        previousMinLim = int(scalarRange[0]);
+        previousMaxLim = int(scalarRange[1]);
 
         // Build a lookup table
-        int scheme = 16; //selects colour scheme 16
+        int scheme = 32; //selects colour scheme 32
+        previousScheme = scheme;
         vtkSmartPointer<vtkColorSeries> colorSeries = vtkSmartPointer<vtkColorSeries>::New();
         colorSeries->SetColorScheme(scheme);
 
@@ -903,7 +928,7 @@ void MainWindow::primitiveShape(int checked)
     }
     // remove light
     renderer->RemoveLight(light);
-	
+
 	if(shapeActor == nullptr)
 		shapeActor = vtkSmartPointer<vtkActor>::New();
 
@@ -1047,12 +1072,12 @@ void MainWindow::primitiveShape(int checked)
     ui->curvatureFilter->setEnabled(false);
     ui->smoothFilter->setEnabled(false);
     ui->resetCameraButton->setEnabled(true);
-	
+
     actor = nullptr;
     // reset all other functions
     ui->noFilter->setChecked(true);
     ui->edgeCheck->setChecked(false);
-	
+
 	if (ui->actionDisplayPlaneWidget->isChecked() == true)
 	{
 		planeWidget->GetRepresentation()->PlaceWidget(shapeActor->GetBounds());

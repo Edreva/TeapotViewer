@@ -22,7 +22,17 @@ DialogEditCurvatureFilter::DialogEditCurvatureFilter(QWidget *parent,
     ui->maxSlider->setValue(maxVal);
     ui->schemeSpinBox->setRange(1,60);
     ui->schemeSpinBox->setValue(type);
-    //TODO COMBOBOX for type
+    ui->typeComboBox->addItem("Minimum");
+    ui->typeComboBox->addItem("Maximum");
+    ui->typeComboBox->addItem("Gaussian");
+    ui->typeComboBox->addItem("Mean");
+
+    ui->maxSpinBox->setValue(maxVal);
+    ui->maxSlider->setValue(maxVal);
+    ui->minSpinBox->setValue(minVal);
+    ui->minSlider->setValue(minVal);
+    ui->typeComboBox->setCurrentIndex(type);
+    ui->schemeSpinBox->setValue(scheme);
 
     //Connect ui elements to their relevant handler functions
     connect(ui->minSpinBox, SIGNAL(valueChanged(int)), this, SLOT(handleMinSpinBox(int)));
@@ -30,6 +40,7 @@ DialogEditCurvatureFilter::DialogEditCurvatureFilter(QWidget *parent,
     connect(ui->minSlider, SIGNAL(valueChanged(int)), this, SLOT(handleMinSlider(int)));
     connect(ui->maxSlider, SIGNAL(valueChanged(int)), this, SLOT(handleMaxSlider(int)));
     connect(ui->schemeSpinBox, SIGNAL(valueChanged(int)), this, SLOT(handleSchemeSpinBox(int)));
+    connect(ui->typeComboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(handleTypeComboBox(int)));
 }
 
 DialogEditCurvatureFilter::~DialogEditCurvatureFilter()
@@ -115,4 +126,9 @@ void DialogEditCurvatureFilter::handleSchemeSpinBox(int value)
     scheme = value;
     emit valuesChanged(minVal, maxVal, type, scheme);
 }
-
+//Function that updates the stored value for type based on the currently selected option in the combo box
+void DialogEditCurvatureFilter::handleTypeComboBox(int value)
+{
+    type = value;
+    emit valuesChanged(minVal, maxVal, type, scheme);
+}
