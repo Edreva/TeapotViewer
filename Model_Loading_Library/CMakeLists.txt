@@ -4,13 +4,13 @@ cmake_minimum_required(VERSION 3.12.0)
 project(Group32ModelViewer)
 
 #Makes sure compiler knows to use c++11 - Will throw warning on some compilers but was required for compiler that Travis uses
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11") 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 #Allows unit tests to be created
 include (CTest)
 
 #adds all the classes to a library
-add_library(Model_Loading_Library 
+add_library(Model_Loading_Library
  src/cell.cpp include/cell.h
  src/material.cpp include/material.h
  src/matrix.cpp include/matrix.h
@@ -39,7 +39,7 @@ add_test(matrixTest matrixTest)
 add_test(modelTest modelTest)
 
 #Copies the testfiles into the binary directory.
-#MSVC puts binaries inside Debug subdirectory whilst other known compilers do not. The following conditional checks the compiler being used and ensures that the necessary resources are copied to the correct location. 
+#MSVC puts binaries inside Debug/Release subdirectory whilst other known compilers do not. The following conditional checks the compiler being used and ensures that the necessary resources are copied to the correct location.
 if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 	FILE(COPY test/ExampleModel1.mod DESTINATION "${CMAKE_BINARY_DIR}/Debug")
 	FILE(COPY test/ExampleModel2.mod DESTINATION "${CMAKE_BINARY_DIR}/Debug")
