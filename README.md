@@ -2,7 +2,7 @@
 **Documentation available at: https://edrever-smith.github.io/2019_GROUP_32/**  
 ## Demo  
 ![](ModelViewerDemo.gif) 
-## Setup (from Clone)
+## Building Source Code  
 **1. Create build directory in root directory**
 ```cmd
 mkdir build
@@ -18,3 +18,6 @@ cmake -DCMAKE_PREFIX_PATH=C:\path\to\Qt\bin;C:\path\to\VTK\bin" -G "Visual Studi
 ```cmd
 msbuild Group32ModelViewer.sln
 ```
+## Install (Source)  
+## Install (NSIS)
+--insert gif walkthrough here
