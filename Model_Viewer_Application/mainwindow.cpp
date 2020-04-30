@@ -45,8 +45,10 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    ui->setupUi(this);
+    //sets the window icon (top left) other instances of the icon handled in cmakelists
+    this->setWindowIcon(QIcon(QString("Group32ModelViewerLogo.ico")));
 
+    ui->setupUi(this);
     // create a STL reader to read a STL file
     STLReader = vtkSmartPointer<vtkSTLReader>::New();
     // create a renderer
@@ -196,6 +198,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->resetCameraButton, SIGNAL(clicked()), this, SLOT(resetCamera()));
     connect(ui->editFilterButton, SIGNAL(clicked()), this, SLOT(loadFilterEditor()));
 
+    //loads the logo to begin with
+    openSTL(QString("logo.stl"));
 }
 
 MainWindow::~MainWindow()
