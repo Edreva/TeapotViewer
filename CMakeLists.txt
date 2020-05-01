@@ -47,7 +47,7 @@ add_subdirectory("Model_Viewer_Application")
 #endif()
 
 #Because of issue with .rc files and mingw bug, if GNU compiler used then no icons unfortunately
-if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" )
   add_executable( ModelViewerApp MACOSX_BUNDLE
   		Model_Viewer_Application/main.cpp
   		Model_Viewer_Application/mainwindow.cpp
@@ -138,6 +138,10 @@ set(CPACK_PACKAGE_VERSION_MAJOR "1")
 set(CPACK_PACKAGE_VERSION_MINOR "0")
 set(CPACK_PACKAGE_VERSION_PATCH "0")
 set(CPACK_PACKAGE_INSTALL_DIRECTORY "Group32ModelViewer")
+set(CPACK_COMPONENT_APPLICATION_DESCRIPTION "The main application and all its required dependencies")
+set(CPACK_COMPONENT_MODELS_DESCRIPTION "Some example .STL and .MOD files that can be loaded by the program")
+set(CPACK_COMPONENT_APPLICATION_REQUIRED ON)
+
 #Location of icon is different depending on compiler so ensure we're looking in the right place
 if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 	if(CMAKE_BUILD_TYPE STREQUAL "Release")
