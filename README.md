@@ -1,5 +1,5 @@
 # 3D Model Viewer Project  [![Build Status](https://travis-ci.com/EDrever-Smith/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master)](https://travis-ci.com/EDrever-Smith/2019_GROUP_32)  
-**Documentation available at: https://edrever-smith.github.io/2019_GROUP_32/**  
+**Documentation available [here](https://edrever-smith.github.io/2019_GROUP_32/ "Library Documentation")**  
 ## Demo  
 ![](ModelViewerDemo.gif) 
 ## Building Source Code  
@@ -46,6 +46,7 @@ msbuild PACKAGE.vcxproj
 ```cmd
 mingw32-make package
 ```
+### Running Installer
 ![](https://github.com/EDrever-Smith/2019_GROUP_32/blob/gh-resources/ModelViewerNSISDemo.gif) 
 ## Known Bugs and Issues  
 - When building from source using MinGW, a quoting issue is encountered when trying to load the .rc file to give the executable an icon. By default, this is avoided by not adding the resource.rc file as a source if a GNU compiler is detected. However, there is an odd fix. By running mingw32-make once then, once this fails, change the root CMakeLists.txt (in any way so just add whitespace and save) then running mingw32-make again will run without error.
