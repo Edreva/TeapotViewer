@@ -8,7 +8,7 @@ branches:
 env:
   global:
     - GH_REPO_NAME: "2019_GROUP_32"
-    - DOXYFILE: $TRAVIS_BUILD_DIR/Model_Loading_Library/Doxyfile
+    - DOXYFILE: $TRAVIS_BUILD_DIR/Doxyfile
     - GH_REPO_REF: github.com/EDrever-Smith/2019_GROUP_32.git
 #Installs selected addons using apt package tool
 addons:

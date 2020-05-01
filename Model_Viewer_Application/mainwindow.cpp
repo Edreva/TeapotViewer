@@ -252,7 +252,7 @@ void MainWindow::loadFilterEditor()
 //function to load dialog widget and link its signal to a function which edits the shrink filter
 void MainWindow::loadShrinkFilterDialog()
 {
-    dialogEditShrinkFilter *shrinkFilterDialog(new dialogEditShrinkFilter(this,shrinkFilter->GetShrinkFactor()));
+    DialogEditShrinkFilter *shrinkFilterDialog(new DialogEditShrinkFilter(this,shrinkFilter->GetShrinkFactor()));
     connect(shrinkFilterDialog, SIGNAL(shrinkFactorChanged(double)), this, SLOT(editShrinkFilter(double)));
     shrinkFilterDialog->show();
     return;

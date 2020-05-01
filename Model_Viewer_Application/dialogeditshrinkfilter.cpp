@@ -3,9 +3,9 @@
 
 using namespace::std;
 
-dialogEditShrinkFilter::dialogEditShrinkFilter(QWidget *parent, double startingValue) :
+DialogEditShrinkFilter::DialogEditShrinkFilter(QWidget *parent, double startingValue) :
     QDialog(parent),
-    ui(new Ui::dialogEditShrinkFilter)
+    ui(new Ui::DialogEditShrinkFilter)
 {
     ui->setupUi(this);
     //setup limits of spinboxes and sliders and their starting values
@@ -22,7 +22,7 @@ dialogEditShrinkFilter::dialogEditShrinkFilter(QWidget *parent, double startingV
 
 }
 
-dialogEditShrinkFilter::~dialogEditShrinkFilter()
+DialogEditShrinkFilter::~DialogEditShrinkFilter()
 {
     delete ui;
 }
@@ -30,14 +30,14 @@ dialogEditShrinkFilter::~dialogEditShrinkFilter()
 
 
 //handler function for the slider
-void dialogEditShrinkFilter::handleShrinkFactorSlider(int value)
+void DialogEditShrinkFilter::handleShrinkFactorSlider(int value)
 {
     shrinkFactor = value / 100.0;
     ui->shrinkFactorSpinBox->setValue(shrinkFactor); //ensure that the slider and spin box are in sync
     emit shrinkFactorChanged(shrinkFactor);
 }
 //handler function for the spin box
-void dialogEditShrinkFilter::handleShrinkFactorSpinBox(double value)
+void DialogEditShrinkFilter::handleShrinkFactorSpinBox(double value)
 {
     shrinkFactor = value;
     ui->shrinkFactorSlider->setValue(int(shrinkFactor * 100));

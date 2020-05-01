@@ -1,7 +1,9 @@
-// this file contains the defination of class MainWindow
+//mainwindow.h
 
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+
+/// @file mainwindow.h This file contains the declarations for the mainwindow class
 
 //Qt libraries
 #include <QButtonGroup>
@@ -195,8 +197,6 @@ private:
     vtkSmartPointer<vtkCurvatures> curvatureFilter;
     vtkSmartPointer<vtkCellArray> cell;
     vtkSmartPointer<vtkPoints> pointData;
-
-    dialogEditShrinkFilter *shrinkFilterDialog;
 
     vector<double> value; // store the RGB value of light
     double intensity; // store the intensity of light
