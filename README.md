@@ -7,16 +7,25 @@
 ```cmd
 mkdir build
 ```
-**2. Generate cmake files in build directory - Must ensure that CMake is passed the location of Qt and VTK binaries**  
+**2. Generate cmake files in build directory - Must ensure that CMake is passed the location of Qt and VTK binaries and they are in PATH**  
 *Example using MSVC*
 ```cmd
 cd build
 cmake -DCMAKE_PREFIX_PATH=C:\path\to\Qt\bin;C:\path\to\VTK\bin" -G "Visual Studio 16 2019" ..
 ```
+*Example using MinGW*
+```cmd
+cd build
+cmake -DCMAKE_PREFIX_PATH=C:\path\to\Qt\bin;C:\path\to\VTK\bin" -G "MinGW Makefiles" ..
+```
 **3. Generate binaries using chosen compiler**  
 *Example using MSVC*
 ```cmd
 msbuild Group32ModelViewer.sln
+```
+*Example using MSVC*
+```cmd
+mingw32-make Group32ModelViewer.sln
 ```
 ## Install (Source)  
 ## Install (NSIS)
