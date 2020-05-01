@@ -98,7 +98,6 @@ list(APPEND LIBS_PATH "${VTK_RUNTIME_LIBRARY_DIRS}")
 #install the main application
 install(TARGETS ModelViewerApp
   RUNTIME DESTINATION bin
-  CONFIGURATIONS Release
   COMPONENT Application)
 #install the necessary resources (icons)
 install(DIRECTORY Model_Viewer_Application/resources/
@@ -108,6 +107,9 @@ install(DIRECTORY Model_Viewer_Application/resources/
 install(DIRECTORY Model_Viewer_Application/models/
   DESTINATION models
   COMPONENT Models)
+install(FILES README.md
+  DESTINATION .
+COMPONENT Application)
 
 #set the keword APP to be the directory to the installed executable to be fixed up.
 set(APP \$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/bin/ModelViewerApp${CMAKE_EXECUTABLE_SUFFIX})
