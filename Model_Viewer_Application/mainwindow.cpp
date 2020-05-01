@@ -47,7 +47,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     //sets the window icon (top left) other instances of the icon handled in cmakelists
     this->setWindowIcon(QIcon(QString("Group32ModelViewerLogo.ico")));
-
+    this->setWindowTitle("Group32ModelViewer");
     ui->setupUi(this);
     // create a STL reader to read a STL file
     STLReader = vtkSmartPointer<vtkSTLReader>::New();
@@ -422,6 +422,7 @@ void MainWindow::openSTL(QString filename)
     ui->cellLabel->setText(QVariant(mapper->GetInput()->GetNumberOfCells()).toString());
     ui->centreLabel->setText(center);
     ui->centreLabel->setToolTip(preciseCenter);
+    ui->weightLabel->setText(QString("-"));
 
     // render the actor
     renderer->AddActor(actor);
@@ -447,9 +448,25 @@ void MainWindow::openMOD(QString filename)
     // read the file and declare vectors to store the data
     Model loadMOD(filename.toStdString());
 
+    QString preciseCenter = QString::number(loadMOD.getModelCentre().get_i());
+    preciseCenter.append(", ");
+    preciseCenter.append(QString::number(loadMOD.getModelCentre().get_j()));
+    preciseCenter.append(", ");
+    preciseCenter.append(QString::number(loadMOD.getModelCentre().get_k()));
+
+    QString center = QString::number(loadMOD.getModelCentre().get_i(),'f',1);
+    center.append(", ");
+    center.append(QString::number(loadMOD.getModelCentre().get_j(),'f',1));
+    center.append(", ");
+    center.append(QString::number(loadMOD.getModelCentre().get_k(),'f',1));
+
     //update model statistics
     ui->pointLabel->setText(QVariant(int(loadMOD.getNumberOfVertices())).toString());
     ui->cellLabel->setText(QVariant(int(loadMOD.getNumberOfCells())).toString());
+    ui->weightLabel->setText(QString::number(loadMOD.getModelWeight(), 'f', 3));
+    ui->weightLabel->setToolTip(QString::number(loadMOD.getModelWeight()));
+    ui->centreLabel->setText(center);
+    ui->centreLabel->setToolTip(preciseCenter);
 
     vector<Tetrahedron> tetrData = loadMOD.getTetra();
     vector<Pyramid> pyramidData = loadMOD.getPyramid();
