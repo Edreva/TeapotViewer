@@ -221,57 +221,50 @@ Generating code for file /home/travis/buil/home/travis/build/EDrever-Smith/2019_
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/dialogeditshrinkfilter.h:15: warning: Member DialogEditShrinkFilter(QWidget *parent=nullptr, double startingValue=1) (function) of class DialogEditShrinkFilter is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/dialogeditshrinkfilter.h:24: warning: Member ui (variable) of class DialogEditShrinkFilter is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/dialogeditshrinkfilter.h:25: warning: Member shrinkFactor (variable) of class DialogEditShrinkFilter is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:138: warning: Member resetLight() (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:140: warning: Member selectedObjectColor() (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:142: warning: Member visableEdge(int) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:144: warning: Member setBackgroundColor() (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:146: warning: Member applyFilter(int) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:148: warning: Member primitiveShape(int) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:150: warning: Member resetCamera() (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:152: warning: Member displayOrientationWidget(bool) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:154: warning: Member displayPlaneWidget(bool) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:156: warning: Member displayBoxWidget(bool) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:158: warning: Member editShrinkFilter(double) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:160: warning: Member openMOD(QString) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:161: warning: Member openSTL(QString) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:163: warning: Member loadShrinkFilterDialog() (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:165: warning: Member loadCurvatureFilterDialog() (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:167: warning: Member conversion(Model *) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:169: warning: Member loadFilterEditor() (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:171: warning: Member handleScreenshot() (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:173: warning: Member editCurvatureFilter(int, int, int, int) (slot) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:176: warning: Member ui (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:178: warning: Member STLReader (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:179: warning: Member renderer (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:180: warning: Member actor (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:181: warning: Member scalarBar (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:182: warning: Member renderWindow (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:183: warning: Member light (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:184: warning: Member color (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:185: warning: Member mapper (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:186: warning: Member shapeActor (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:187: warning: Member camera (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:188: warning: Member axes (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:189: warning: Member orientationMarker (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:190: warning: Member plane (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:191: warning: Member planeWidget (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:192: warning: Member boxWidget (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:193: warning: Member boxWidgetCallback (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:194: warning: Member planeWidgetCallback (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:195: warning: Member rep (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:196: warning: Member shrinkFilter (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:197: warning: Member curvatureFilter (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:198: warning: Member cell (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:199: warning: Member pointData (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:201: warning: Member value (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:202: warning: Member intensity (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:203: warning: Member primitiveShapeActor (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:204: warning: Member shapeItor (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:205: warning: Member previousMinLim (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:206: warning: Member previousMaxLim (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:207: warning: Member previousType (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:208: warning: Member previousScheme (variable) of class MainWindow is not documented.
-/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:209: warning: Member filterButton (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:199: warning: Member ui (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:201: warning: Member STLReader (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:202: warning: Member renderer (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:203: warning: Member actor (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:204: warning: Member scalarBar (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:205: warning: Member renderWindow (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:206: warning: Member light (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:207: warning: Member color (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:208: warning: Member mapper (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:209: warning: Member shapeActor (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:210: warning: Member camera (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:211: warning: Member axes (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:212: warning: Member orientationMarker (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:213: warning: Member plane (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:214: warning: Member planeWidget (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:215: warning: Member boxWidget (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:216: warning: Member boxWidgetCallback (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:217: warning: Member planeWidgetCallback (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:218: warning: Member rep (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:219: warning: Member shrinkFilter (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:220: warning: Member curvatureFilter (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:221: warning: Member cell (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:222: warning: Member pointData (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:224: warning: Member value (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:225: warning: Member intensity (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:226: warning: Member primitiveShapeActor (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:227: warning: Member shapeItor (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:228: warning: Member previousMinLim (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:229: warning: Member previousMaxLim (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:230: warning: Member previousType (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:231: warning: Member previousScheme (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:232: warning: Member filterButton (variable) of class MainWindow is not documented.
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:176: warning: argument 'int' of command @param is not found in the argument list of MainWindow::editCurvatureFilter(int minLim, int maxLim, int type, int scheme)
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:176: warning: argument 'int' of command @param is not found in the argument list of MainWindow::editCurvatureFilter(int minLim, int maxLim, int type, int scheme)
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:176: warning: argument 'int' of command @param is not found in the argument list of MainWindow::editCurvatureFilter(int minLim, int maxLim, int type, int scheme)
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:176: warning: argument 'int' of command @param is not found in the argument list of MainWindow::editCurvatureFilter(int minLim, int maxLim, int type, int scheme)
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:181: warning: The following parameters of MainWindow::editCurvatureFilter(int minLim, int maxLim, int type, int scheme) are not documented:
+  parameter 'minLim'
+  parameter 'maxLim'
+  parameter 'type'
+  parameter 'scheme'
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:173: warning: argument 'double' of command @param is not found in the argument list of MainWindow::editShrinkFilter(double shrinkFactor)
+/home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Viewer_Application/mainwindow.h:175: warning: The following parameters of MainWindow::editShrinkFilter(double shrinkFactor) are not documented:
+  parameter 'shrinkFactor'
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:19: warning: Member density (variable) of class Material is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:20: warning: Member colour (variable) of class Material is not documented.
 /home/travis/build/EDrever-Smith/2019_GROUP_32/Model_Loading_Library/include/material.h:21: warning: Member name (variable) of class Material is not documented.
@@ -342,5 +335,5 @@ Generating file member index...
 Generating example index...
 finalizing index lists...
 writing tag file...
-lookup cache used 374/65536 hits=2218 misses=395
+lookup cache used 378/65536 hits=2226 misses=399
 finished...

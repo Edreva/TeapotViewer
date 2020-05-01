@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadmodel',['loadModel',['../class_model.html#a130ea217f86abc5e7cc6f721410ea9ac',1,'Model']]]
+  ['inv',['inv',['../class_matrix.html#a7611488b98f9c291c86cb2ea47b1b56a',1,'Matrix']]]
 ];

@@ -6,5 +6,6 @@ var searchData=
   ['celltype',['cellType',['../class_cell.html#a8cab0a15f2a4acd1d518a1377eb51bc3',1,'Cell']]],
   ['cofactor',['cofactor',['../class_matrix.html#ad7ec89ebfc5c653e198191a62e11e5ca',1,'Matrix']]],
   ['color',['color',['../class_cell.html#a948b5966624212fbd29ebdb2f4394dc4',1,'Cell']]],
+  ['conversion',['conversion',['../class_main_window.html#a96fb3efb1db225e7ff46e99a51822114',1,'MainWindow']]],
   ['converttovector',['convertToVector',['../class_matrix.html#ad8d53348c8531b512be6b89747048156',1,'Matrix']]]
 ];

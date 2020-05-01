@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vector',['Vector',['../class_vector.html#a6f80c73b5f18dcf3f8e36065bdc8b9e5',1,'Vector::Vector()'],['../class_vector.html#a8a56784805bc78e407c3067c32398830',1,'Vector::Vector(float i, float j, float k)'],['../class_vector.html#a27217dc78aabf052a511532ea3ced909',1,'Vector::Vector(const Vector &amp;_Vector)']]]
+  ['tetrahedron',['Tetrahedron',['../class_tetrahedron.html#ae0b07b13c90b10e253b3fb9978f7d2e4',1,'Tetrahedron::Tetrahedron()'],['../class_tetrahedron.html#ab9f2c07e818f24b4c9f8f81ea1cf9626',1,'Tetrahedron::Tetrahedron(Vector &amp;v0, Vector &amp;v1, Vector &amp;v2, Vector &amp;v3, Material &amp;m)']]],
+  ['transpose',['transpose',['../class_matrix.html#ae23f817021383e3c8636a714dcba1d21',1,'Matrix']]]
 ];

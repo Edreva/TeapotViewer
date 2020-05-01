@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Model Loading Library: MainWindow Class Reference</title>
+<title>Group32 Model Viewer: MainWindow Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -23,9 +23,9 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Model Loading Library
+   <div id="projectname">Group32 Model Viewer
    </div>
-   <div id="projectbrief">Library for loading 3D models from .mod files</div>
+   <div id="projectbrief">Model Viewer Application for loading 3D models from .stl and .mod files</div>
   </td>
  </tr>
  </tbody>
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p>Class for creating the main window object.  
+<p>Class for creating the main window of the application.  
  <a href="class_main_window.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
@@ -113,7 +113,7 @@ Public Slots</h2></td></tr>
 <tr class="memdesc:aa7473e4bbbcc281706ac2edef864fb45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows user to choose a file (.mod or .stl) to open using file dialog.  <a href="#aa7473e4bbbcc281706ac2edef864fb45">More...</a><br /></td></tr>
 <tr class="separator:aa7473e4bbbcc281706ac2edef864fb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d890d358a2b0277fd581829d339e67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a16d890d358a2b0277fd581829d339e67">setLightColor</a> ()</td></tr>
-<tr class="memdesc:a16d890d358a2b0277fd581829d339e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows user to select the colour of the camera light by opening a colour picker dialog boxWidget.  <a href="#a16d890d358a2b0277fd581829d339e67">More...</a><br /></td></tr>
+<tr class="memdesc:a16d890d358a2b0277fd581829d339e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows user to select the colour of the camera light by opening a colour picker dialog.  <a href="#a16d890d358a2b0277fd581829d339e67">More...</a><br /></td></tr>
 <tr class="separator:a16d890d358a2b0277fd581829d339e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c7087afca5d2305d93730edd082ef3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a2c7087afca5d2305d93730edd082ef3c">setLightIntensitySpinBox</a> ()</td></tr>
 <tr class="memdesc:a2c7087afca5d2305d93730edd082ef3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the intensity of the light.  <a href="#a2c7087afca5d2305d93730edd082ef3c">More...</a><br /></td></tr>
@@ -122,62 +122,77 @@ Public Slots</h2></td></tr>
 <tr class="memdesc:a6791559a58be6d0f90174964fb8ca8d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the intensity of the light.  <a href="#a6791559a58be6d0f90174964fb8ca8d7">More...</a><br /></td></tr>
 <tr class="separator:a6791559a58be6d0f90174964fb8ca8d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad642a89f5478e3dcd0d5ef7d789385b2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad642a89f5478e3dcd0d5ef7d789385b2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetLight</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ad642a89f5478e3dcd0d5ef7d789385b2">resetLight</a> ()</td></tr>
+<tr class="memdesc:ad642a89f5478e3dcd0d5ef7d789385b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the lights from the renderer. <br /></td></tr>
 <tr class="separator:ad642a89f5478e3dcd0d5ef7d789385b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a139cf19f37ef5a7f69c438746d544ba5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a139cf19f37ef5a7f69c438746d544ba5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>selectedObjectColor</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a139cf19f37ef5a7f69c438746d544ba5">selectedObjectColor</a> ()</td></tr>
+<tr class="memdesc:a139cf19f37ef5a7f69c438746d544ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows user to select the colour of the model by opening a colour picker dialog. <br /></td></tr>
 <tr class="separator:a139cf19f37ef5a7f69c438746d544ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad949c745455925e4cf8e21fc70783697"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad949c745455925e4cf8e21fc70783697"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>visableEdge</b> (int)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ad949c745455925e4cf8e21fc70783697">visableEdge</a> (int)</td></tr>
+<tr class="memdesc:ad949c745455925e4cf8e21fc70783697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows user to enable or disable the edge visibility of the model. <br /></td></tr>
 <tr class="separator:ad949c745455925e4cf8e21fc70783697"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a976faafc215e74605642f66a0f018d8e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a976faafc215e74605642f66a0f018d8e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setBackgroundColor</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a976faafc215e74605642f66a0f018d8e">setBackgroundColor</a> ()</td></tr>
+<tr class="memdesc:a976faafc215e74605642f66a0f018d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows user to select the colour of the background by opening a colour picker dialog. <br /></td></tr>
 <tr class="separator:a976faafc215e74605642f66a0f018d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1755052778ac75eeebd9bb6af6feb921"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1755052778ac75eeebd9bb6af6feb921"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>applyFilter</b> (int)</td></tr>
-<tr class="separator:a1755052778ac75eeebd9bb6af6feb921"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec6fbcecd80fa297b862700176dda357"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec6fbcecd80fa297b862700176dda357"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>primitiveShape</b> (int)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#aec6fbcecd80fa297b862700176dda357">primitiveShape</a> (int)</td></tr>
+<tr class="memdesc:aec6fbcecd80fa297b862700176dda357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays one of the three primitive shapes (tetrahedron, pyramid, hexahedron) <br /></td></tr>
 <tr class="separator:aec6fbcecd80fa297b862700176dda357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acdfade55a70d7cba0ba0dbea3d77d183"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acdfade55a70d7cba0ba0dbea3d77d183"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>resetCamera</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#acdfade55a70d7cba0ba0dbea3d77d183">resetCamera</a> ()</td></tr>
+<tr class="memdesc:acdfade55a70d7cba0ba0dbea3d77d183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the camera to its default position and orientation. <br /></td></tr>
 <tr class="separator:acdfade55a70d7cba0ba0dbea3d77d183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae125a8433a629fe300fca967ab27c3e0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae125a8433a629fe300fca967ab27c3e0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>displayOrientationWidget</b> (bool)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae125a8433a629fe300fca967ab27c3e0">displayOrientationWidget</a> (bool)</td></tr>
+<tr class="memdesc:ae125a8433a629fe300fca967ab27c3e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds orientation widget to the bottom left of the screen which tracks the camera orientation. <br /></td></tr>
 <tr class="separator:ae125a8433a629fe300fca967ab27c3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a596f49699bc32c9c70e246608b3494e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a596f49699bc32c9c70e246608b3494e9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>displayPlaneWidget</b> (bool)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a596f49699bc32c9c70e246608b3494e9">displayPlaneWidget</a> (bool)</td></tr>
+<tr class="memdesc:a596f49699bc32c9c70e246608b3494e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the plane widget to the screen, used by clipping filter to determine where to clip. <br /></td></tr>
 <tr class="separator:a596f49699bc32c9c70e246608b3494e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a968a851dd876a877291cfe1ab6e5861f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a968a851dd876a877291cfe1ab6e5861f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>displayBoxWidget</b> (bool)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a968a851dd876a877291cfe1ab6e5861f">displayBoxWidget</a> (bool)</td></tr>
+<tr class="memdesc:a968a851dd876a877291cfe1ab6e5861f"><td class="mdescLeft">&#160;</td><td class="mdescRight">adds box widget that allows model to be edited <br /></td></tr>
 <tr class="separator:a968a851dd876a877291cfe1ab6e5861f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f3d7e8a52bb3d240e4eddf43aa5aead"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7f3d7e8a52bb3d240e4eddf43aa5aead"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>editShrinkFilter</b> (double)</td></tr>
+<tr class="memitem:a1755052778ac75eeebd9bb6af6feb921"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a1755052778ac75eeebd9bb6af6feb921">applyFilter</a> (int)</td></tr>
+<tr class="memdesc:a1755052778ac75eeebd9bb6af6feb921"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the filter corresponding to the ID passed.  <a href="#a1755052778ac75eeebd9bb6af6feb921">More...</a><br /></td></tr>
+<tr class="separator:a1755052778ac75eeebd9bb6af6feb921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3d7e8a52bb3d240e4eddf43aa5aead"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a7f3d7e8a52bb3d240e4eddf43aa5aead">editShrinkFilter</a> (double)</td></tr>
+<tr class="memdesc:a7f3d7e8a52bb3d240e4eddf43aa5aead"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows the shrink filter's properties to be changed.  <a href="#a7f3d7e8a52bb3d240e4eddf43aa5aead">More...</a><br /></td></tr>
 <tr class="separator:a7f3d7e8a52bb3d240e4eddf43aa5aead"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02463ab4399859877c27b826b84a3eed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02463ab4399859877c27b826b84a3eed"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>openMOD</b> (QString)</td></tr>
-<tr class="separator:a02463ab4399859877c27b826b84a3eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf43d131f9b6d59f7a360d72b465be7a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf43d131f9b6d59f7a360d72b465be7a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>openSTL</b> (QString)</td></tr>
-<tr class="separator:acf43d131f9b6d59f7a360d72b465be7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1af8bf22825032fdb675cbe7ac4cb11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#ae1af8bf22825032fdb675cbe7ac4cb11">editCurvatureFilter</a> (int, int, int, int)</td></tr>
+<tr class="memdesc:ae1af8bf22825032fdb675cbe7ac4cb11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles the change of the curvature filter's properties.  <a href="#ae1af8bf22825032fdb675cbe7ac4cb11">More...</a><br /></td></tr>
+<tr class="separator:ae1af8bf22825032fdb675cbe7ac4cb11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a563bf71cc61e9d7cdefeedf715f38bab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a563bf71cc61e9d7cdefeedf715f38bab"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a563bf71cc61e9d7cdefeedf715f38bab">loadFilterEditor</a> ()</td></tr>
+<tr class="memdesc:a563bf71cc61e9d7cdefeedf715f38bab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects which filter editor dialog to open based on what filter is currently active. <br /></td></tr>
+<tr class="separator:a563bf71cc61e9d7cdefeedf715f38bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a5266dedbaafab8bd210a170218cb05"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a5266dedbaafab8bd210a170218cb05"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadShrinkFilterDialog</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a0a5266dedbaafab8bd210a170218cb05">loadShrinkFilterDialog</a> ()</td></tr>
+<tr class="memdesc:a0a5266dedbaafab8bd210a170218cb05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the shrink filter editor dialog box. <br /></td></tr>
 <tr class="separator:a0a5266dedbaafab8bd210a170218cb05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc31da5124e74615871dc83d997fc113"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc31da5124e74615871dc83d997fc113"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadCurvatureFilterDialog</b> ()</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#abc31da5124e74615871dc83d997fc113">loadCurvatureFilterDialog</a> ()</td></tr>
+<tr class="memdesc:abc31da5124e74615871dc83d997fc113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the curvature filter editor dialog box. <br /></td></tr>
 <tr class="separator:abc31da5124e74615871dc83d997fc113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02463ab4399859877c27b826b84a3eed"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02463ab4399859877c27b826b84a3eed"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a02463ab4399859877c27b826b84a3eed">openMOD</a> (QString)</td></tr>
+<tr class="memdesc:a02463ab4399859877c27b826b84a3eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a .mod file. <br /></td></tr>
+<tr class="separator:a02463ab4399859877c27b826b84a3eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf43d131f9b6d59f7a360d72b465be7a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf43d131f9b6d59f7a360d72b465be7a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#acf43d131f9b6d59f7a360d72b465be7a">openSTL</a> (QString)</td></tr>
+<tr class="memdesc:acf43d131f9b6d59f7a360d72b465be7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a .stl file. <br /></td></tr>
+<tr class="separator:acf43d131f9b6d59f7a360d72b465be7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96fb3efb1db225e7ff46e99a51822114"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96fb3efb1db225e7ff46e99a51822114"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>conversion</b> (<a class="el" href="class_model.html">Model</a> *)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a96fb3efb1db225e7ff46e99a51822114">conversion</a> (<a class="el" href="class_model.html">Model</a> *)</td></tr>
+<tr class="memdesc:a96fb3efb1db225e7ff46e99a51822114"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert MOD to STL <br /></td></tr>
 <tr class="separator:a96fb3efb1db225e7ff46e99a51822114"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a563bf71cc61e9d7cdefeedf715f38bab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a563bf71cc61e9d7cdefeedf715f38bab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadFilterEditor</b> ()</td></tr>
-<tr class="separator:a563bf71cc61e9d7cdefeedf715f38bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e821369ef4735266305eda608a94d0f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e821369ef4735266305eda608a94d0f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>handleScreenshot</b> ()</td></tr>
+<tr class="memitem:a9e821369ef4735266305eda608a94d0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_main_window.html#a9e821369ef4735266305eda608a94d0f">handleScreenshot</a> ()</td></tr>
+<tr class="memdesc:a9e821369ef4735266305eda608a94d0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow the user to save a screenshot of the current camera view.  <a href="#a9e821369ef4735266305eda608a94d0f">More...</a><br /></td></tr>
 <tr class="separator:a9e821369ef4735266305eda608a94d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1af8bf22825032fdb675cbe7ac4cb11"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae1af8bf22825032fdb675cbe7ac4cb11"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>editCurvatureFilter</b> (int, int, int, int)</td></tr>
-<tr class="separator:ae1af8bf22825032fdb675cbe7ac4cb11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -289,7 +304,12 @@ QButtonGroup *&#160;</td><td class="memItemRight" valign="bottom"><b>filterButto
 <tr class="separator:aba529f01695d212e066f3da45d421606"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class for creating the main window object. </p>
+<div class="textblock"><p>Class for creating the main window of the application. </p>
+<dl class="section author"><dt>Author</dt><dd>Ewan Drever-Smith </dd>
+<dd>
+Wenxiang LUO </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>02/05/2020 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a996c5a2b6f77944776856f08ec30858d"></a>
 <div class="memitem">
@@ -316,6 +336,162 @@ QButtonGroup *&#160;</td><td class="memItemRight" valign="bottom"><b>filterButto
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a1755052778ac75eeebd9bb6af6feb921"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::applyFilter </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>buttonID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enables the filter corresponding to the ID passed. </p>
+<dl class="section note"><dt>Note</dt><dd>Table shows each ID's corresponding filter <table class="doxtable">
+<tr>
+<th>ID</th><th>Filter  </th></tr>
+<tr>
+<td>0 </td><td>No filter </td></tr>
+<tr>
+<td>1 </td><td>Clip Filter </td></tr>
+<tr>
+<td>2 </td><td>Shrink Filter </td></tr>
+<tr>
+<td>3 </td><td>Smooth Filter </td></tr>
+<tr>
+<td>4 </td><td>Curvature Filter </td></tr>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae1af8bf22825032fdb675cbe7ac4cb11"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::editCurvatureFilter </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>minLim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxLim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>scheme</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handles the change of the curvature filter's properties. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">int</td><td>The minimum curvature limit </td></tr>
+    <tr><td class="paramname">int</td><td>The maximum curvature limit </td></tr>
+    <tr><td class="paramname">int</td><td>The curvature type (min, max, gauss, mean) </td></tr>
+    <tr><td class="paramname">int</td><td>The colour scheme </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a7f3d7e8a52bb3d240e4eddf43aa5aead"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::editShrinkFilter </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>shrinkFactor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allows the shrink filter's properties to be changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">double</td><td>the shrink filters shrink factor parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9e821369ef4735266305eda608a94d0f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::handleScreenshot </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Allow the user to save a screenshot of the current camera view. </p>
+<dl class="section note"><dt>Note</dt><dd>Does not save the background, only the actors </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="aa7473e4bbbcc281706ac2edef864fb45"></a>
 <div class="memitem">
 <div class="memproto">
@@ -363,7 +539,7 @@ QButtonGroup *&#160;</td><td class="memItemRight" valign="bottom"><b>filterButto
 </table>
 </div><div class="memdoc">
 
-<p>Allows user to select the colour of the camera light by opening a colour picker dialog boxWidget. </p>
+<p>Allows user to select the colour of the camera light by opening a colour picker dialog. </p>
 <dl class="section note"><dt>Note</dt><dd>Also enables the remove light button </dd></dl>
 
 </div>
