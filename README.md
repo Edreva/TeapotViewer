@@ -23,9 +23,9 @@ cmake -DCMAKE_PREFIX_PATH=C:\path\to\Qt\bin;C:\path\to\VTK\bin" -G "MinGW Makefi
 ```cmd
 msbuild Group32ModelViewer.sln
 ```
-*Example using MSVC*
+*Example using MinGW*
 ```cmd
-mingw32-make Group32ModelViewer.sln
+mingw32-make
 ```
 ## Install (Source)  
 ## Install (NSIS)
