@@ -22,4 +22,4 @@ msbuild Group32ModelViewer.sln
 ## Install (NSIS)
 --insert gif walkthrough here
 ## Known Bugs and Issues  
--When building from source using MinGW, a quoting issue is encountered when trying to load the .rc file to give the executable an icon. By default, this is avoided by not adding the resource.rc file as a source if a GNU compiler is detected. However, there is an odd fix. By running mingw32-make once then, once this fails, change the root CMakeLists.txt (in any way so just add whitespace and save) then running mingw32-make again will run without error.
+- When building from source using MinGW, a quoting issue is encountered when trying to load the .rc file to give the executable an icon. By default, this is avoided by not adding the resource.rc file as a source if a GNU compiler is detected. However, there is an odd fix. By running mingw32-make once then, once this fails, change the root CMakeLists.txt (in any way so just add whitespace and save) then running mingw32-make again will run without error.
