@@ -10,7 +10,7 @@
 
 using namespace std;
 /**
- * @brief Class for creating tetrahedron cell objects made up of vector points. Child of Cell class.
+ * @brief Class for creating vector point objects
  * @author Anthony Cooke
  * @author Ewan Drever-Smith
  * @author Wenxiang LUO
