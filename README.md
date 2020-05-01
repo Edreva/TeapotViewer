@@ -21,3 +21,4 @@ msbuild Group32ModelViewer.sln
 ## Install (Source)  
 ## Install (NSIS)
 --insert gif walkthrough here
+## Known Bugs and Issues
