@@ -3,7 +3,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-/// @file mainwindow.h This file contains the declarations for the mainwindow class
+/// @file mainwindow.h This file contains the declarations for the mainwindow class and callback classes
 
 //Qt libraries
 #include <QButtonGroup>
@@ -110,7 +110,13 @@ public:
     vtkPlane *Plane;
     vtkActor *Actor;
 };
-///@brief Class for creating the main window object
+/**
+ * @brief Class for creating the main window of the application
+ * @author Ewan Drever-Smith
+ * @author Wenxiang LUO
+ * @version 1.0
+ * @date 02/05/2020
+ */
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -125,7 +131,7 @@ public slots:
     ///@brief Allows user to choose a file (.mod or .stl) to open using file dialog
     ///@note resets actions, radiobuttons and checkboxes to their default state
     void open();
-    ///@brief Allows user to select the colour of the camera light by opening a colour picker dialog boxWidget
+    ///@brief Allows user to select the colour of the camera light by opening a colour picker dialog
     ///@note Also enables the remove light button
     void setLightColor();
     ///@brief Updates the intensity of the light
@@ -134,43 +140,60 @@ public slots:
     ///@brief Updates the intensity of the light
     ///@note Updates spin box to match updated value
     void setLightIntensitySlider();
-    // reset the light
+    ///@brief Removes the lights from the renderer
     void resetLight();
-    // chang color of the object to a user selected color
+    ///@brief Allows user to select the colour of the model by opening a colour picker dialog
     void selectedObjectColor();
-    // set the edge visibility
+    ///@brief Allows user to enable or disable the edge visibility of the model
     void visableEdge(int);
-    // set background color
+    ///@brief Allows user to select the colour of the background by opening a colour picker dialog
     void setBackgroundColor();
-    // apply filter setting
-    void applyFilter(int);
-    // add primitive shape
+    ///@brief Displays one of the three primitive shapes (tetrahedron, pyramid, hexahedron)
     void primitiveShape(int);
-    // reset camera
+    ///@brief Resets the camera to its default position and orientation
     void resetCamera();
-    //adds orientation widget to the bottom left of the screen
+    ///@brief Adds orientation widget to the bottom left of the screen which tracks the camera orientation
     void displayOrientationWidget(bool);
-    //adds widget that allows planes to be edited
+    ///@brief Adds the plane widget to the screen, used by clipping filter to determine where to clip
     void displayPlaneWidget(bool);
-    //adds box widget that allows model to be edited
+    ///@brief adds box widget that allows model to be edited
     void displayBoxWidget(bool);
-    //This function will allow the shrink filter's properties to be changed
+    ///@brief Enables the filter corresponding to the ID passed
+    /**
+     * @note Table shows each ID's corresponding filter
+     * ID|    Filter      |
+     * --|----------------|
+     * 0 |    No filter   |
+     * 1 |  Clip Filter   |
+     * 2 | Shrink Filter  |
+     * 3 | Smooth Filter  |
+     * 4 |Curvature Filter|
+    */
+    void applyFilter(int);
+    ///@brief Allows the shrink filter's properties to be changed
+    ///@param double the shrink filters shrink factor parameter
     void editShrinkFilter(double);
-    //Functions for opening different file types
-    void openMOD(QString);
-    void openSTL(QString);
-    //function to open the shrink filter editor dialog box
-    void loadShrinkFilterDialog();
-    //function to open the curvature filter editor dialog box
-    void loadCurvatureFilterDialog();
-    // convert MOD to STL
-    void conversion(Model*);
-    //function to select which filter editor dialog to open
-    void loadFilterEditor();
-    //function to allow the user to save a screenshot
-    void handleScreenshot();
-    //function to handle the change of the curvature filter's properties
+    ///@brief Handles the change of the curvature filter's properties
+    ///@param int The minimum curvature limit
+    ///@param int The maximum curvature limit
+    ///@param int The curvature type (min, max, gauss, mean)
+    ///@param int The colour scheme
     void editCurvatureFilter(int,int,int,int);
+    ///@brief Selects which filter editor dialog to open based on what filter is currently active
+    void loadFilterEditor();
+    ///@brief Opens the shrink filter editor dialog box
+    void loadShrinkFilterDialog();
+    ///@brief Opens the curvature filter editor dialog box
+    void loadCurvatureFilterDialog();
+    ///@brief Opens a .mod file
+    void openMOD(QString);
+    ///@brief Opens a .stl file
+    void openSTL(QString);
+    ///@brief convert MOD to STL
+    void conversion(Model*);
+    ///@brief Allow the user to save a screenshot of the current camera view
+    ///@note Does not save the background, only the actors
+    void handleScreenshot();
 
 private:
     Ui::MainWindow *ui;
