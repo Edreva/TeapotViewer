@@ -2,15 +2,14 @@
 #ifndef MATERIAL_H_INCLUDED
 #define MATERIAL_H_INCLUDED
 
-/** 
- * @file material.h This file contains the declarations for the model class
- */
+///@file material.h This file contains the declarations for the model class
 
 #include <string>
 using namespace std;//for std::
-/** 
+/**
  * @brief Class for storing properties of a material
- * @author Vorrapol Gundthanachart with modifications from Ewan Drever-Smith
+ * @author Vorrapol Gundthanachart
+ * @author Ewan Drever-Smith
  * @version 1.0
  * @date 06/12/2019
  */

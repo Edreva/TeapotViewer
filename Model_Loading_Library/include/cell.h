@@ -40,8 +40,8 @@ public:
 	/// @brief gets all the vertexes making up the cell
 	/// @return returns a vector list containing all the vector points making up this cell
 	std::vector<Vector> getVertex() const;
-  	/// @brief gets the rgb colour of the cell
-  	/// @return returns a vector of 3 ints.
+  /// @brief gets the rgb colour of the cell
+  /// @return returns a vector of 3 ints.
 	std::vector<int> getColorRGB() const;
 	/// @brief stream insertion overload
 	friend std::ostream& operator<<(std::ostream& out, const Cell& c);
@@ -62,9 +62,8 @@ protected:
 	double weight;
 	/// @brief holds the density of the cell
 	double density;
-
-	std::string color; // the color of the cell
-
+	/// @brief holds the color of the cell
+	std::string color;
 	/// @brief calculates the volume of the cell from its points
 	/// @return void
 	virtual void setVolume();
@@ -73,8 +72,11 @@ protected:
 	void setWeight();
 	/// @brief calculates the COG of the cell
 	/// @return void
-	void setGravityCenter(); // determine the gravity center
-	int hexToDec(string) const; // convert a hexadecimal to decimal
+	void setGravityCenter();
+	/// @brief converts a hexadecimal to decimal
+	/// @param string the hexadecimal number as a string
+	/// @return converted number as a decimal int
+	int hexToDec(string) const;
 };
 
 #endif //CELL_H

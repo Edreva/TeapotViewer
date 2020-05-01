@@ -1,6 +1,7 @@
 // model.h
 #ifndef MODEL_H_INCLUDED
 #define MODEL_H_INCLUDED
+
 /// @file model.h This file contains the declarations for the model class
 
 #include <vector>
@@ -19,6 +20,7 @@ using namespace std;
 /**
  * @brief Class for reading .mod file and providing details regarding its contents
  * @author Ewan Drever-Smith
+ * @author Wenxiang LUO
  * @version 1.1
  * @date 05/12/2019
  */
@@ -153,5 +155,3 @@ private:
     vector<Tetrahedron> tetraList;
 };
 #endif // MODEL_H_INCLUDED
-
-

@@ -2,9 +2,8 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
-/**
- * @file matrix.h This file contains the declarations for the matrix class
- */
+///@file matrix.h This file contains the declarations for the matrix class
+
 
 #include <iostream>
 #include <stdexcept>
