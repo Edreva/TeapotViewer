@@ -2,6 +2,12 @@ var searchData=
 [
   ['generatecelllist',['generateCellList',['../class_model.html#ae9a35ea73ca0aad22d9caae6974a897c',1,'Model']]],
   ['genrotationmatrix',['genRotationMatrix',['../class_matrix.html#a07a3ae7f108c40411792095afe2871d6',1,'Matrix']]],
+  ['get_5fcross_5fp',['get_cross_p',['../class_vector.html#a2a5f6496d0dbaeb4e92b915557e00349',1,'Vector']]],
+  ['get_5fdot_5fp',['get_dot_p',['../class_vector.html#a4642c3284b49c2cabd8cca77c0627e65',1,'Vector']]],
+  ['get_5fi',['get_i',['../class_vector.html#ae6b99e0e873993fec6044bd727a2e3bc',1,'Vector']]],
+  ['get_5fj',['get_j',['../class_vector.html#ad1ae3c4fd8b284c4084902662e220b5d',1,'Vector']]],
+  ['get_5fk',['get_k',['../class_vector.html#a9bc20656683d7df275b45a36ba5df3af',1,'Vector']]],
+  ['get_5fmag',['get_mag',['../class_vector.html#a03b4c6c51df917776df081b7910bf962',1,'Vector']]],
   ['getcol',['getCol',['../class_matrix.html#a9cc613623b105a5a051272dd4aabf130',1,'Matrix']]],
   ['getcolorrgb',['getColorRGB',['../class_cell.html#ac5aecad749c7956494cbe9c75dd71bf4',1,'Cell']]],
   ['getcolour',['getColour',['../class_material.html#aa3cf93e7e978ab05178c3891d095601a',1,'Material']]],

@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['operator_21_3d',['operator!=',['../class_matrix.html#a064a67178b77293bf3002f70bae63d7d',1,'Matrix']]],
-  ['operator_28_29',['operator()',['../class_matrix.html#a6b3e290ca2ce684e96bbbddfec0c3bc6',1,'Matrix::operator()(size_t row, size_t col)'],['../class_matrix.html#a5d7fdcdf9421e9a5ae721f6be96e454a',1,'Matrix::operator()(size_t row, size_t col) const ']]],
-  ['operator_2a',['operator*',['../class_matrix.html#ae69a6d3345472ac03f440c564d05580a',1,'Matrix']]],
-  ['operator_2b',['operator+',['../class_matrix.html#a7006ca867b8a3f7ff843f5f1b66cf365',1,'Matrix']]],
-  ['operator_2d',['operator-',['../class_matrix.html#ae7081b6e85ecd008b0c39be80b736789',1,'Matrix']]],
-  ['operator_3d',['operator=',['../class_cell.html#a7159cd870e201a45ea84a3fdfa9e6581',1,'Cell::operator=()'],['../class_matrix.html#aea5a06385f646eb4a63929fae6fa3e14',1,'Matrix::operator=()'],['../class_model.html#a8180fa83d501f476122243f098bbbfdb',1,'Model::operator=()']]],
-  ['operator_3d_3d',['operator==',['../class_matrix.html#a37285ebf9e6f823ac0e54d01b9f3822f',1,'Matrix']]]
+  ['material',['Material',['../class_material.html#a137e987401b63eb7c6c27c3e38bc74b5',1,'Material::Material()'],['../class_material.html#a38cbd870f33a0241f8c0956638a8e4d6',1,'Material::Material(double d, string c, string n, int i)']]],
+  ['matrix',['Matrix',['../class_matrix.html#a2dba13c45127354c9f75ef576f49269b',1,'Matrix::Matrix()'],['../class_matrix.html#a8babd004b9967f110b1627a3017ee0ab',1,'Matrix::Matrix(int row, int col)'],['../class_matrix.html#a742cc4954637c96b39ffee18b506912d',1,'Matrix::Matrix(Vector v)'],['../class_matrix.html#a765f4dcb51b6829311cc3e7576388423',1,'Matrix::Matrix(const Matrix &amp;m)']]],
+  ['minor_5f',['minor_',['../class_matrix.html#af4de4a02ac57f2f6c1e3ffe538252c08',1,'Matrix']]],
+  ['model',['Model',['../class_model.html#a66d4539f097b59fde0d6244a14380046',1,'Model::Model(string filePath)'],['../class_model.html#ae3b375de5f6df4faf74a95d64748e048',1,'Model::Model()'],['../class_model.html#a0386968ae522e868e3b6028c8b154837',1,'Model::Model(const Model &amp;)']]]
 ];

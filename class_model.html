@@ -193,13 +193,13 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:ae314a4b82027ba1587de43421c801a9b"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_vector.html">Vector</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#ae314a4b82027ba1587de43421c801a9b">listOfVectors</a></td></tr>
-<tr class="memdesc:ae314a4b82027ba1587de43421c801a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_vector.html">Vector</a> sequence containing all the vector objects in the model.  <a href="#ae314a4b82027ba1587de43421c801a9b">More...</a><br /></td></tr>
+<tr class="memdesc:ae314a4b82027ba1587de43421c801a9b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> sequence containing all the vector objects in the model.  <a href="#ae314a4b82027ba1587de43421c801a9b">More...</a><br /></td></tr>
 <tr class="separator:ae314a4b82027ba1587de43421c801a9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf67948d41531314efe70c0dd00a1f46"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_cell.html">Cell</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#aaf67948d41531314efe70c0dd00a1f46">listOfCells</a></td></tr>
-<tr class="memdesc:aaf67948d41531314efe70c0dd00a1f46"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_vector.html">Vector</a> sequence containing all the cell objects in the model.  <a href="#aaf67948d41531314efe70c0dd00a1f46">More...</a><br /></td></tr>
+<tr class="memdesc:aaf67948d41531314efe70c0dd00a1f46"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> sequence containing all the cell objects in the model.  <a href="#aaf67948d41531314efe70c0dd00a1f46">More...</a><br /></td></tr>
 <tr class="separator:aaf67948d41531314efe70c0dd00a1f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f4336f4edf2ba34a3105007d9b36f5d"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_material.html">Material</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#a9f4336f4edf2ba34a3105007d9b36f5d">listOfMaterials</a></td></tr>
-<tr class="memdesc:a9f4336f4edf2ba34a3105007d9b36f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_vector.html">Vector</a> sequence containing all the material objects in the model.  <a href="#a9f4336f4edf2ba34a3105007d9b36f5d">More...</a><br /></td></tr>
+<tr class="memdesc:a9f4336f4edf2ba34a3105007d9b36f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> sequence containing all the material objects in the model.  <a href="#a9f4336f4edf2ba34a3105007d9b36f5d">More...</a><br /></td></tr>
 <tr class="separator:a9f4336f4edf2ba34a3105007d9b36f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acef8325f33e9b0fa3a49c903f031455e"><td class="memItemLeft" align="right" valign="top">vector&lt; vector&lt; int &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model.html#acef8325f33e9b0fa3a49c903f031455e">uninitCellList</a></td></tr>
 <tr class="memdesc:acef8325f33e9b0fa3a49c903f031455e"><td class="mdescLeft">&#160;</td><td class="mdescRight">stores a 'recipe' to generate <a class="el" href="class_cell.html" title="Class for creating cell objects made up of vector points. Parent to hexahedron, pyramid and tetrahedr...">Cell</a> objects from  <a href="#acef8325f33e9b0fa3a49c903f031455e">More...</a><br /></td></tr>
@@ -230,7 +230,9 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for reading .mod file and providing details regarding its contents. </p>
-<dl class="section author"><dt>Author</dt><dd>Ewan Drever-Smith </dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Ewan Drever-Smith </dd>
+<dd>
+Wenxiang LUO </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>05/12/2019 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -433,7 +435,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </div><div class="memdoc">
 
 <p>Calculates the centre of the model. </p>
-<dl class="section return"><dt>Returns</dt><dd>Calculation result as a <a class="el" href="class_vector.html">Vector</a> point </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Calculation result as a <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> point </dd></dl>
 
 </div>
 </div>
@@ -523,7 +525,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </div><div class="memdoc">
 
 <p>gets all the pyramids in a model </p>
-<dl class="section return"><dt>Returns</dt><dd>returns a vector of <a class="el" href="class_pyramid.html">Pyramid</a> objects </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>returns a vector of <a class="el" href="class_pyramid.html" title="Class for creating pyramid cell objects made up of vector points. Child of Cell class. ">Pyramid</a> objects </dd></dl>
 
 </div>
 </div>
@@ -559,7 +561,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </div><div class="memdoc">
 
 <p>gets all the vectors in a model </p>
-<dl class="section return"><dt>Returns</dt><dd>a vector of <a class="el" href="class_vector.html">Vector</a> objects </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a vector of <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> objects </dd></dl>
 
 </div>
 </div>
@@ -749,7 +751,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_vector.html">Vector</a> sequence containing all the cell objects in the model. </p>
+<p><a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> sequence containing all the cell objects in the model. </p>
 <dl class="section note"><dt>Note</dt><dd>Each object in the object list is stored at the index of its ID - This was done for speed in locating the object needed. However this does have consequences - every ID in the file must be consecutive, or else the object will attempted to be added to a point outside the range of the std::vector. In the future, if this is no longer acceptable, then store ID as a parameter of the object itself. This would mean that each object could be stored at any point in the list, but would take longer to search for the object with a particular ID. </dd></dl>
 
 </div>
@@ -772,7 +774,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_vector.html">Vector</a> sequence containing all the material objects in the model. </p>
+<p><a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> sequence containing all the material objects in the model. </p>
 <dl class="section note"><dt>Note</dt><dd>Each object in the object list is stored at the index of its ID - This was done for speed in locating the object needed. However this does have consequences - every ID in the file must be consecutive, or else the object will attempted to be added to a point outside the range of the std::vector. In the future, if this is no longer acceptable, then store ID as a parameter of the object itself. This would mean that each object could be stored at any point in the list, but would take longer to search for the object with a particular ID. </dd></dl>
 
 </div>
@@ -795,7 +797,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_vector.html">Vector</a> sequence containing all the vector objects in the model. </p>
+<p><a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> sequence containing all the vector objects in the model. </p>
 <dl class="section note"><dt>Note</dt><dd>Each object in the object list is stored at the index of its ID - This was done for speed in locating the object needed. However this does have consequences - every ID in the file must be consecutive, or else the object will attempted to be added to a point outside the range of the std::vector. In the future, if this is no longer acceptable, then store ID as a parameter of the object itself. This would mean that each object could be stored at any point in the list, but would take longer to search for the object with a particular ID. </dd></dl>
 
 </div>
@@ -825,21 +827,21 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <tr>
 <td>[0]: Type </td><td>[0][0] </td><td>[0][1] </td><td>[0][n] </td></tr>
 <tr>
-<td>[1]: <a class="el" href="class_vector.html">Vector</a> 1 </td><td>[1][0] </td><td>[1][1] </td><td>[1][n] </td></tr>
+<td>[1]: <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> 1 </td><td>[1][0] </td><td>[1][1] </td><td>[1][n] </td></tr>
 <tr>
-<td>[2]: <a class="el" href="class_vector.html">Vector</a> 2 </td><td>[2][0] </td><td>[2][1] </td><td>[2][n] </td></tr>
+<td>[2]: <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> 2 </td><td>[2][0] </td><td>[2][1] </td><td>[2][n] </td></tr>
 <tr>
-<td>[3]: <a class="el" href="class_vector.html">Vector</a> 3 </td><td>[3][0] </td><td>[3][1] </td><td>[3][n] </td></tr>
+<td>[3]: <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> 3 </td><td>[3][0] </td><td>[3][1] </td><td>[3][n] </td></tr>
 <tr>
-<td>[4]: <a class="el" href="class_vector.html">Vector</a> 4 </td><td>[4][0] </td><td>[4][1] </td><td>[4][n] </td></tr>
+<td>[4]: <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> 4 </td><td>[4][0] </td><td>[4][1] </td><td>[4][n] </td></tr>
 <tr>
-<td>[5]: <a class="el" href="class_vector.html">Vector</a> 5 </td><td>[5][0] </td><td>[5][1] </td><td>[5][n] </td></tr>
+<td>[5]: <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> 5 </td><td>[5][0] </td><td>[5][1] </td><td>[5][n] </td></tr>
 <tr>
-<td>[6]: <a class="el" href="class_vector.html">Vector</a> 6 </td><td>[6][0] </td><td>[6][1] </td><td>[6][n] </td></tr>
+<td>[6]: <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> 6 </td><td>[6][0] </td><td>[6][1] </td><td>[6][n] </td></tr>
 <tr>
-<td>[7]: <a class="el" href="class_vector.html">Vector</a> 7 </td><td>[7][0] </td><td>[7][1] </td><td>[7][n] </td></tr>
+<td>[7]: <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> 7 </td><td>[7][0] </td><td>[7][1] </td><td>[7][n] </td></tr>
 <tr>
-<td>[8]: <a class="el" href="class_vector.html">Vector</a> 8 </td><td>[8][0] </td><td>[8][1] </td><td>[8][n] </td></tr>
+<td>[8]: <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> 8 </td><td>[8][0] </td><td>[8][1] </td><td>[8][n] </td></tr>
 <tr>
 <td>[9]: <a class="el" href="class_material.html" title="Class for storing properties of a material. ">Material</a> </td><td>[9][0] </td><td>[9][1] </td><td>[9][n] </td></tr>
 </table>

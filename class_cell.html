@@ -104,9 +104,9 @@ Inheritance diagram for Cell:</div>
  <div class="center">
   <img src="class_cell.png" usemap="#Cell_map" alt=""/>
   <map id="Cell_map" name="Cell_map">
-<area href="class_hexahedron.html" alt="Hexahedron" shape="rect" coords="0,56,81,80"/>
-<area href="class_pyramid.html" alt="Pyramid" shape="rect" coords="91,56,172,80"/>
-<area href="class_tetrahedron.html" alt="Tetrahedron" shape="rect" coords="182,56,263,80"/>
+<area href="class_hexahedron.html" title="Class for creating hexahedron cell objects made up of vector points. Child of Cell class..." alt="Hexahedron" shape="rect" coords="0,56,81,80"/>
+<area href="class_pyramid.html" title="Class for creating pyramid cell objects made up of vector points. Child of Cell class. " alt="Pyramid" shape="rect" coords="91,56,172,80"/>
+<area href="class_tetrahedron.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class..." alt="Tetrahedron" shape="rect" coords="182,56,263,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -158,8 +158,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a07f141a23d056ee22c2d847a6709052b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a07f141a23d056ee22c2d847a6709052b">setGravityCenter</a> ()</td></tr>
 <tr class="memdesc:a07f141a23d056ee22c2d847a6709052b"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the COG of the cell  <a href="#a07f141a23d056ee22c2d847a6709052b">More...</a><br /></td></tr>
 <tr class="separator:a07f141a23d056ee22c2d847a6709052b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33f9224e54de8ca440021534469d44c4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33f9224e54de8ca440021534469d44c4"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>hexToDec</b> (string) const </td></tr>
+<tr class="memitem:a33f9224e54de8ca440021534469d44c4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a33f9224e54de8ca440021534469d44c4">hexToDec</a> (string) const </td></tr>
+<tr class="memdesc:a33f9224e54de8ca440021534469d44c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts a hexadecimal to decimal  <a href="#a33f9224e54de8ca440021534469d44c4">More...</a><br /></td></tr>
 <tr class="separator:a33f9224e54de8ca440021534469d44c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -188,7 +188,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="memdesc:a4a5bedd07f9f68be513382e90f9f2814"><td class="mdescLeft">&#160;</td><td class="mdescRight">holds the density of the cell <br /></td></tr>
 <tr class="separator:a4a5bedd07f9f68be513382e90f9f2814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a948b5966624212fbd29ebdb2f4394dc4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a948b5966624212fbd29ebdb2f4394dc4"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>color</b></td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_cell.html#a948b5966624212fbd29ebdb2f4394dc4">color</a></td></tr>
+<tr class="memdesc:a948b5966624212fbd29ebdb2f4394dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">holds the color of the cell <br /></td></tr>
 <tr class="separator:a948b5966624212fbd29ebdb2f4394dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
@@ -312,6 +313,39 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 
 </div>
 </div>
+<a class="anchor" id="a33f9224e54de8ca440021534469d44c4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Cell::hexToDec </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>color</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>converts a hexadecimal to decimal </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">string</td><td>the hexadecimal number as a string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>converted number as a decimal int </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a07f141a23d056ee22c2d847a6709052b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -362,7 +396,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 <p>calculates the volume of the cell from its points </p>
 <dl class="section return"><dt>Returns</dt><dd>void </dd></dl>
 
-<p>Reimplemented in <a class="el" href="class_tetrahedron.html#a8ffdd29e3ee24f6a86277ba7ecf165d4">Tetrahedron</a>, <a class="el" href="class_pyramid.html#af9866f9f413990611a838aa783458c7c">Pyramid</a>, and <a class="el" href="class_hexahedron.html#abbe6644be6ec825d6ee4fef51165b56a">Hexahedron</a>.</p>
+<p>Reimplemented in <a class="el" href="class_tetrahedron.html#a8ffdd29e3ee24f6a86277ba7ecf165d4">Tetrahedron</a>, <a class="el" href="class_hexahedron.html#abbe6644be6ec825d6ee4fef51165b56a">Hexahedron</a>, and <a class="el" href="class_pyramid.html#af9866f9f413990611a838aa783458c7c">Pyramid</a>.</p>
 
 </div>
 </div>
@@ -412,7 +446,7 @@ std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="
 </div><div class="memdoc">
 
 <p>a vector list of 3 doubles storing the point where the center of gravity of the cell resides </p>
-<dl class="section note"><dt>Note</dt><dd>This could be stored as a <a class="el" href="class_vector.html">Vector</a> object instead. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This could be stored as a <a class="el" href="class_vector.html" title="Class for creating tetrahedron cell objects made up of vector points. Child of Cell class...">Vector</a> object instead. </dd></dl>
 
 </div>
 </div>
