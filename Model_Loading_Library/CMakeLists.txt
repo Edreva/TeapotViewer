@@ -28,18 +28,22 @@ add_executable(modelTest test/modelTest.cpp)
 add_executable(matrixTest test/matrixTest.cpp)
 add_executable(vectorTest test/vectorTest.cpp)
 add_executable(materialTest test/materialTest.cpp)
+add_executable(cellTest test/cellTest.cpp)
 
 #links required libraries
 target_link_libraries(modelTest  Model_Loading_Library)
 target_link_libraries(matrixTest Model_Loading_Library)
 target_link_libraries(vectorTest Model_Loading_Library)
 target_link_libraries(materialTest Model_Loading_Library)
+target_link_libraries(cellTest Model_Loading_Library)
 
 #Marks the executables as unit tests
 add_test(vectorTest vectorTest)
 add_test(matrixTest matrixTest)
 add_test(modelTest modelTest)
 add_test(materialTest materialTest)
+add_test(cellTest cellTest)
+
 
 #Copies the testfiles into the binary directory.
 #MSVC puts binaries inside Debug/Release subdirectory whilst other known compilers do not. The following conditional checks the compiler being used and ensures that the necessary resources are copied to the correct location.
