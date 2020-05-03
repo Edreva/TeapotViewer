@@ -1,4 +1,4 @@
-# Group32 'TeapotViewer'  [![Build Status](https://travis-ci.com/EDrever-Smith/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master)](https://travis-ci.com/EDrever-Smith/2019_GROUP_32)
+# Group32's 'TeapotViewer'  [![Build Status](https://travis-ci.com/EDrever-Smith/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master)](https://travis-ci.com/EDrever-Smith/2019_GROUP_32)
 ## [Documentation](https://edrever-smith.github.io/2019_GROUP_32/ "Library Documentation")  
 ## [Installers](https://github.com/EDrever-Smith/2019_GROUP_32/tree/gh-resources/Installers "Installers")
 ## Demo  
