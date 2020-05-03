@@ -1,11 +1,15 @@
 var searchData=
 [
-  ['calc_5fmag',['calc_mag',['../class_vector.html#ad82f539adcb4aa30d0917358d0828bde',1,'Vector']]],
-  ['cell',['Cell',['../class_cell.html',1,'Cell'],['../class_cell.html#a394510643e8664cf12b5efaf5cb99f71',1,'Cell::Cell()']]],
-  ['cell_2eh',['cell.h',['../cell_8h.html',1,'']]],
-  ['celltype',['cellType',['../class_cell.html#a8cab0a15f2a4acd1d518a1377eb51bc3',1,'Cell']]],
-  ['cofactor',['cofactor',['../class_matrix.html#ad7ec89ebfc5c653e198191a62e11e5ca',1,'Matrix']]],
-  ['color',['color',['../class_cell.html#a948b5966624212fbd29ebdb2f4394dc4',1,'Cell']]],
-  ['conversion',['conversion',['../class_main_window.html#a96fb3efb1db225e7ff46e99a51822114',1,'MainWindow']]],
-  ['converttovector',['convertToVector',['../class_matrix.html#ad8d53348c8531b512be6b89747048156',1,'Matrix']]]
+  ['data',['data',['../class_cell.html#ad0dc93bd53b9dad2b2f727e5e31f4172',1,'Cell']]],
+  ['density',['density',['../class_cell.html#a4a5bedd07f9f68be513382e90f9f2814',1,'Cell']]],
+  ['det',['det',['../class_matrix.html#a4a34f04eb1c6f63c13959cb9f7276886',1,'Matrix']]],
+  ['dialogeditcurvaturefilter',['DialogEditCurvatureFilter',['../class_dialog_edit_curvature_filter.html',1,'']]],
+  ['dialogeditshrinkfilter',['DialogEditShrinkFilter',['../class_dialog_edit_shrink_filter.html',1,'']]],
+  ['displayboxwidget',['displayBoxWidget',['../class_main_window.html#a968a851dd876a877291cfe1ab6e5861f',1,'MainWindow']]],
+  ['displaycells',['displayCells',['../class_model.html#ad0a00df7269a361f9bbe3c6dd4b41ee2',1,'Model']]],
+  ['displaydimensions',['displayDimensions',['../class_model.html#a80c8beac8c4e987ba019adda1d6cce73',1,'Model']]],
+  ['displaymaterials',['displayMaterials',['../class_model.html#a1f3a4451c638451fdbe770e8e9794db0',1,'Model']]],
+  ['displayorientationwidget',['displayOrientationWidget',['../class_main_window.html#ae125a8433a629fe300fca967ab27c3e0',1,'MainWindow']]],
+  ['displayplanewidget',['displayPlaneWidget',['../class_main_window.html#a596f49699bc32c9c70e246608b3494e9',1,'MainWindow']]],
+  ['displayvertices',['displayVertices',['../class_model.html#a663501c193879f849bdfa92b7c64ff10',1,'Model']]]
 ];
