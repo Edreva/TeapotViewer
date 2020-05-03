@@ -1,3 +1,4 @@
+<img src="https://github.com/EDrever-Smith/2019_GROUP_32/blob/master/Model_Viewer_Application/resources/Group32ModelViewerLogo.ico" height="24">
 # 3D Model Viewer Project  [![Build Status](https://travis-ci.com/EDrever-Smith/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master)](https://travis-ci.com/EDrever-Smith/2019_GROUP_32)  
 **Documentation available [here](https://edrever-smith.github.io/2019_GROUP_32/ "Library Documentation")**  
 ## Demo  
