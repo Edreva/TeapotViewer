@@ -1,6 +1,6 @@
 # 3D Model Viewer Project  [![Build Status](https://travis-ci.com/EDrever-Smith/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master)](https://travis-ci.com/EDrever-Smith/2019_GROUP_32)  
-**Documentation available [here](https://edrever-smith.github.io/2019_GROUP_32/ "Library Documentation")**  
-**Installers available [here](https://github.com/EDrever-Smith/2019_GROUP_32/tree/gh-resources/Installers "Installers")**
+**[Documentation](https://edrever-smith.github.io/2019_GROUP_32/ "Library Documentation")** 
+**[Installers](https://github.com/EDrever-Smith/2019_GROUP_32/tree/gh-resources/Installers "Installers")**
 ## Demo  
 ![](https://github.com/EDrever-Smith/2019_GROUP_32/blob/gh-resources/ModelViewerDemo.gif) 
 ## Building Source Code  
