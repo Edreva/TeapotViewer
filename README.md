@@ -1,7 +1,7 @@
 # 3D Model Viewer Project  [![Build Status](https://travis-ci.com/EDrever-Smith/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master)](https://travis-ci.com/EDrever-Smith/2019_GROUP_32)  
 **Documentation available [here](https://edrever-smith.github.io/2019_GROUP_32/ "Library Documentation")**  
 ## Demo  
-![](ModelViewerDemo.gif) 
+![](https://github.com/EDrever-Smith/2019_GROUP_32/blob/gh-resources/ModelViewerDemo.gif) 
 ## Building Source Code  
 **1. Create build directory in root directory**
 ```cmd
