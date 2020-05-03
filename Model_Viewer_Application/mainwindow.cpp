@@ -7,16 +7,17 @@
 using std::map;
 using std::vector;
 
-
+//Constructor for vtkBoxWidgetCallback class
 vtkBoxWidgetCallback* vtkBoxWidgetCallback::New()
 {
     return new vtkBoxWidgetCallback;
 }
+//Function to set the actor for which the boxwidget transform will be affecting
 void vtkBoxWidgetCallback::SetActor( vtkSmartPointer<vtkActor> actor )
 {
     m_actor = actor;
 }
-
+//Function which transforms the actor based on the user's interaction with the box widget
 void vtkBoxWidgetCallback::Execute(vtkObject *caller, unsigned long, void*)
 {
     vtkSmartPointer<vtkBoxWidget2> boxWidget =
@@ -28,12 +29,13 @@ void vtkBoxWidgetCallback::Execute(vtkObject *caller, unsigned long, void*)
     vtkBoxRepresentation::SafeDownCast( boxWidget->GetRepresentation() )->GetTransform( t );
     this->m_actor->SetUserTransform( t );
 }
-
+//Constructor for vtkPlaneWidgetCallback class
 vtkPlaneWidgetCallback* vtkPlaneWidgetCallback::New()
 {
     return new vtkPlaneWidgetCallback;
 }
 
+//Class that updates the plane representation based on the plane widget
 void vtkPlaneWidgetCallback::Execute(vtkObject *caller, unsigned long, void*)
 {
     vtkImplicitPlaneWidget2 *iPlaneWidget = reinterpret_cast<vtkImplicitPlaneWidget2*>(caller);
@@ -48,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
     //sets the window icon (top left) other instances of the icon handled in cmakelists
     this->setWindowIcon(QIcon(QString("Group32ModelViewerLogo.ico")));
     this->setWindowTitle("Group32ModelViewer");
+
     ui->setupUi(this);
     // create a STL reader to read a STL file
     STLReader = vtkSmartPointer<vtkSTLReader>::New();
@@ -78,7 +81,7 @@ MainWindow::MainWindow(QWidget *parent)
     plane = vtkSmartPointer<vtkPlane>::New();
 
     // set the background color of the render window
-    renderer->SetBackground(0.1, 0.7, 0.1);
+    renderer->SetBackground(0.8, 0.8, 0.8);
     // set the light
     light->SetLightTypeToHeadlight();
     light->SetPosition(5, 5, 15);
@@ -194,19 +197,33 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->backgroundColor, SIGNAL(clicked()), this, SLOT(setBackgroundColor()));
     connect(filterButton, SIGNAL(buttonClicked(int)), this, SLOT(applyFilter(int)));
     connect(shapeButton, SIGNAL(buttonClicked(int)), this, SLOT(primitiveShape(int)));
-    //connect(shapeButton, QOverload<int>::of(&QButtonGroup::buttonClicked), this, &MainWindow::primitiveShape);
     connect(ui->resetCameraButton, SIGNAL(clicked()), this, SLOT(resetCamera()));
     connect(ui->editFilterButton, SIGNAL(clicked()), this, SLOT(loadFilterEditor()));
+    connect(ui->actionFullscreen, SIGNAL(toggled(bool)),this, SLOT(handleFullscreen(bool)));
 
     //loads the logo to begin with
     openSTL(QString("logo.stl"));
+    ui->noShape->setChecked(true);
+    ui->noFilter->setChecked(true);
+    ui->edgeCheck->setChecked(false);
+    ui->actionDisplayPlaneWidget->setEnabled(false);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+//function to allow the window to be made fullscreen
+void MainWindow::handleFullscreen(bool checked)
+{
+    if(checked)
+        this->setWindowState(Qt::WindowFullScreen);
+    else
+    {
+        this->setWindowState(Qt::WindowMinimized);
+        this->setWindowState(Qt::WindowActive);
+    }
+}
 //function to convert the current vtk window to a png and save it
 void MainWindow::handleScreenshot()
 {
@@ -273,7 +290,6 @@ void MainWindow::editShrinkFilter(double shrinkFactor)
     ui->openGLWidget->GetRenderWindow()->Render();
     return;
 }
-//edit curvature filter params -> Min, Max, Type, Colour Scheme
 //function to handle the change of the curvature filter's minimum and maximum scalar limit
 void MainWindow::editCurvatureFilter(int minLim, int maxLim, int type, int scheme)
 {
@@ -331,17 +347,9 @@ void MainWindow::editCurvatureFilter(int minLim, int maxLim, int type, int schem
     //do i make curvature filter a private var or just generate new one each time a change is made
     ui->openGLWidget->GetRenderWindow()->Render();
 }
-// this function would load the STL file
+//function to open a file dialog and allow the user to select the file they wish to open
 void MainWindow::open()
 {
-    // remove all the actors
-    for(shapeItor = primitiveShapeActor.begin(); shapeItor != primitiveShapeActor.end(); shapeItor++)
-    {
-        renderer->RemoveActor(*shapeItor);
-    }
-    renderer->RemoveActor(shapeActor);
-    renderer->RemoveActor(actor);
-    renderer->RemoveActor(scalarBar);
     ui->noShape->setChecked(true);
 
     // set the filter for STL file
@@ -349,8 +357,8 @@ void MainWindow::open()
     // obtain the file name
     QString filename = QFileDialog::getOpenFileName(this, QString("Open STL file"), "./", filter);
 
-	if (actor == nullptr)
-		actor = vtkSmartPointer<vtkActor>::New();
+    if (actor == nullptr)
+        actor = vtkSmartPointer<vtkActor>::New();
 
     if(filename.endsWith(".stl"))
         openSTL(filename);
@@ -368,23 +376,28 @@ void MainWindow::open()
     //reset actions
     ui->actionDisplayOrientationWidget->setChecked(false);
     ui->actionDisplayPlaneWidget->setChecked(false);
-
-	if (ui->actionDisplayBoxWidget->isChecked() == true)
-	{
-		boxWidget->GetRepresentation()->PlaceWidget(actor->GetBounds());
-		boxWidgetCallback->SetActor(actor);
-		boxWidget->Modified();
-	}
+    ui->actionDisplayBoxWidget->setChecked(false);
+    ui->actionDisplayBoxWidget->setEnabled(true);
 
     // reset all other functions
     ui->noShape->setChecked(true);
     ui->noFilter->setChecked(true);
     ui->edgeCheck->setChecked(false);
 
-	shapeActor = nullptr;
+    shapeActor = nullptr;
 }
+//function to handle opening a .stl file
 void MainWindow::openSTL(QString filename)
 {
+    // remove all the actors
+    for(shapeItor = primitiveShapeActor.begin(); shapeItor != primitiveShapeActor.end(); shapeItor++)
+    {
+        renderer->RemoveActor(*shapeItor);
+    }
+    renderer->RemoveActor(shapeActor);
+    renderer->RemoveActor(actor);
+    renderer->RemoveActor(scalarBar);
+
     // read the file
     STLReader->SetFileName(filename.toLatin1().data());
     STLReader->Update();
@@ -393,7 +406,7 @@ void MainWindow::openSTL(QString filename)
 
     // set properties and data of the actor
     actor->SetMapper(mapper);
-    actor->GetProperty()->SetColor(color->GetColor3d("Blue").GetData());
+    actor->GetProperty()->SetColor(color->GetColor3d("IndianRed").GetData());
 
     // Calculate centre of mass of the object
     vtkSmartPointer<vtkCenterOfMass> centerOfMass = vtkSmartPointer<vtkCenterOfMass>::New();
@@ -427,9 +440,6 @@ void MainWindow::openSTL(QString filename)
     // render the actor
     renderer->AddActor(actor);
 
-    ui->openGLWidget->GetRenderWindow()->AddRenderer(renderer); //TODO check this.. Repeated?
-    ui->openGLWidget->GetRenderWindow()->Render();
-
     // enable some of the meaningful operations after loading the file
     ui->changeLightColourButton->setEnabled(true);
     ui->intensity->setEnabled(true);
@@ -443,8 +453,20 @@ void MainWindow::openSTL(QString filename)
     ui->smoothFilter->setEnabled(true);
     ui->resetCameraButton->setEnabled(true);
 }
+//function to handle opening a .stl file
 void MainWindow::openMOD(QString filename)
 {
+    ui->actionDisplayBoxWidget->setEnabled(false);
+    ui->actionDisplayBoxWidget->setChecked(false);
+    // remove all the actors
+    for(shapeItor = primitiveShapeActor.begin(); shapeItor != primitiveShapeActor.end(); shapeItor++)
+    {
+        renderer->RemoveActor(*shapeItor);
+    }
+    renderer->RemoveActor(shapeActor);
+    renderer->RemoveActor(actor);
+    renderer->RemoveActor(scalarBar);
+
     // read the file and declare vectors to store the data
     Model loadMOD(filename.toStdString());
 
@@ -663,22 +685,22 @@ void MainWindow::displayBoxWidget(bool checked)
 {
     if(checked)
     {
-	    	   vtkSmartPointer<vtkActor> pActor = nullptr;
-	   if (actor != nullptr)
-	   {
-		   pActor = actor;
-	   }
-	   else if (shapeActor != nullptr)
-	   {
-		   pActor = shapeActor;
-	   }
-	   else
-	   {
-		   return;
-	   }
+        vtkSmartPointer<vtkActor> pActor = nullptr;
+        if (actor != nullptr)
+        {
+            pActor = actor;
+        }
+        else if (shapeActor != nullptr)
+        {
+            pActor = shapeActor;
+        }
+        else
+        {
+            return;
+        }
        boxWidget->GetRepresentation()->SetPlaceFactor( 1 ); // Default is 0.5
-       boxWidget->GetRepresentation()->PlaceWidget(actor->GetBounds());
-       boxWidgetCallback->SetActor(actor);
+       boxWidget->GetRepresentation()->PlaceWidget(pActor->GetBounds());
+       boxWidgetCallback->SetActor(pActor);
        boxWidget->AddObserver( vtkCommand::InteractionEvent, boxWidgetCallback );
        boxWidget->On();
     }
@@ -827,6 +849,8 @@ void MainWindow::applyFilter(int buttonID)
     ui->actionDisplayPlaneWidget->setEnabled(false);
     renderer->RemoveActor(scalarBar);
     ui->actionDisplayPlaneWidget->setChecked(false);
+    ui->actionDisplayBoxWidget->setChecked(false);
+    ui->actionDisplayBoxWidget->setEnabled(true);
     switch(buttonID)
     {
     case 0:
@@ -840,6 +864,7 @@ void MainWindow::applyFilter(int buttonID)
     case 1:
     {
         ui->actionDisplayPlaneWidget->setEnabled(true);
+        ui->actionDisplayBoxWidget->setEnabled(false);
         rep->SetPlaceFactor(1.25);
         rep->PlaceWidget(actor->GetBounds());
         rep->SetNormal(plane->GetNormal());
@@ -938,7 +963,9 @@ void MainWindow::applyFilter(int buttonID)
 // this function could add one of the primitive shapes
 void MainWindow::primitiveShape(int checked)
 {
-
+    //remove box widget
+    ui->actionDisplayBoxWidget->setChecked(false);
+    ui->actionDisplayBoxWidget->setEnabled(true);
 
     // remove all the actors
     renderer->RemoveActor(actor);
@@ -1099,17 +1126,9 @@ void MainWindow::primitiveShape(int checked)
     ui->noFilter->setChecked(true);
     ui->edgeCheck->setChecked(false);
 
-	if (ui->actionDisplayPlaneWidget->isChecked() == true)
-	{
-		planeWidget->GetRepresentation()->PlaceWidget(shapeActor->GetBounds());
-		planeWidgetCallback->Actor = shapeActor;
-		planeWidget->Modified();
-	}
 	if (ui->actionDisplayBoxWidget->isChecked() == true)
 	{
-		boxWidget->GetRepresentation()->PlaceWidget(shapeActor->GetBounds());
-		boxWidgetCallback->SetActor(shapeActor);
-		boxWidget->Modified();
+
 	}
 
 	resetCamera();

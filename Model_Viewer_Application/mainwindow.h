@@ -194,6 +194,8 @@ public slots:
     ///@brief Allow the user to save a screenshot of the current camera view
     ///@note Does not save the background, only the actors
     void handleScreenshot();
+    ///@brief Makes the window fullscreen
+    void handleFullscreen(bool);
 
 private:
     Ui::MainWindow *ui;
