@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['readme',['README',['../md__home_travis_build_EDrever-Smith_2019_GROUP_32_README.html',1,'']]],
-  ['readcell',['readCell',['../class_model.html#ae0f2881efbdfcc620248c9b7302de7a6',1,'Model']]],
-  ['readmaterial',['readMaterial',['../class_model.html#ab7f40856771246fb957a80da7c295174',1,'Model']]],
-  ['readvector',['readVector',['../class_model.html#aff08178c8150e67efd30a439052aaa38',1,'Model']]],
-  ['resetcamera',['resetCamera',['../class_main_window.html#acdfade55a70d7cba0ba0dbea3d77d183',1,'MainWindow']]],
-  ['resetlight',['resetLight',['../class_main_window.html#ad642a89f5478e3dcd0d5ef7d789385b2',1,'MainWindow']]]
+  ['primitiveshape',['primitiveShape',['../class_main_window.html#aec6fbcecd80fa297b862700176dda357',1,'MainWindow']]],
+  ['pyramid',['Pyramid',['../class_pyramid.html',1,'Pyramid'],['../class_pyramid.html#aa78baa6faa1c3fbcca510e8ddf37de49',1,'Pyramid::Pyramid()'],['../class_pyramid.html#a4d32b9990334f79bff456c2549903e7c',1,'Pyramid::Pyramid(Vector &amp;v0, Vector &amp;v1, Vector &amp;v2, Vector &amp;v3, Vector &amp;v4, Material &amp;m)']]],
+  ['pyramid_2eh',['pyramid.h',['../pyramid_8h.html',1,'']]],
+  ['pyramidlist',['pyramidList',['../class_model.html#a50169a615b67a8c2244c539e587fd2c1',1,'Model']]]
 ];
