@@ -1,6 +1,8 @@
 var searchData=
 [
   ['det',['det',['../class_matrix.html#a4a34f04eb1c6f63c13959cb9f7276886',1,'Matrix']]],
+  ['dialogeditcurvaturefilter',['DialogEditCurvatureFilter',['../class_dialog_edit_curvature_filter.html#a6fcdf7a958736e273bcab90d7a87e9fd',1,'DialogEditCurvatureFilter']]],
+  ['dialogeditshrinkfilter',['DialogEditShrinkFilter',['../class_dialog_edit_shrink_filter.html#abf9e65ca12d845d3257efaf0d0d209c8',1,'DialogEditShrinkFilter']]],
   ['displayboxwidget',['displayBoxWidget',['../class_main_window.html#a968a851dd876a877291cfe1ab6e5861f',1,'MainWindow']]],
   ['displaycells',['displayCells',['../class_model.html#ad0a00df7269a361f9bbe3c6dd4b41ee2',1,'Model']]],
   ['displaydimensions',['displayDimensions',['../class_model.html#a80c8beac8c4e987ba019adda1d6cce73',1,'Model']]],
