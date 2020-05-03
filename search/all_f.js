@@ -1,8 +1,20 @@
 var searchData=
 [
-  ['readcell',['readCell',['../class_model.html#ae0f2881efbdfcc620248c9b7302de7a6',1,'Model']]],
-  ['readmaterial',['readMaterial',['../class_model.html#ab7f40856771246fb957a80da7c295174',1,'Model']]],
-  ['readvector',['readVector',['../class_model.html#aff08178c8150e67efd30a439052aaa38',1,'Model']]],
-  ['resetcamera',['resetCamera',['../class_main_window.html#acdfade55a70d7cba0ba0dbea3d77d183',1,'MainWindow']]],
-  ['resetlight',['resetLight',['../class_main_window.html#ad642a89f5478e3dcd0d5ef7d789385b2',1,'MainWindow']]]
+  ['savemodel',['saveModel',['../class_model.html#a09be17372087e781646129bdf94e897a',1,'Model']]],
+  ['scale',['scale',['../class_matrix.html#aeb1958821ed18c83d25c109aaf03b27c',1,'Matrix']]],
+  ['selectedobjectcolor',['selectedObjectColor',['../class_main_window.html#a139cf19f37ef5a7f69c438746d544ba5',1,'MainWindow']]],
+  ['set_5fi',['set_i',['../class_vector.html#aa501c3a0f022ce253ce1839cc109a878',1,'Vector']]],
+  ['set_5fj',['set_j',['../class_vector.html#a93f6f1354003ab18ad4b5753bcaf36d3',1,'Vector']]],
+  ['set_5fk',['set_k',['../class_vector.html#a5fd59a74aeeca31c8bfc45ad1b79a4a4',1,'Vector']]],
+  ['setbackgroundcolor',['setBackgroundColor',['../class_main_window.html#a976faafc215e74605642f66a0f018d8e',1,'MainWindow']]],
+  ['setgravitycenter',['setGravityCenter',['../class_cell.html#a07f141a23d056ee22c2d847a6709052b',1,'Cell']]],
+  ['setlightcolor',['setLightColor',['../class_main_window.html#a16d890d358a2b0277fd581829d339e67',1,'MainWindow']]],
+  ['setlightintensityslider',['setLightIntensitySlider',['../class_main_window.html#a6791559a58be6d0f90174964fb8ca8d7',1,'MainWindow']]],
+  ['setlightintensityspinbox',['setLightIntensitySpinBox',['../class_main_window.html#a2c7087afca5d2305d93730edd082ef3c',1,'MainWindow']]],
+  ['setmaterial',['setMaterial',['../class_material.html#acb7b5f7bd68179ac81aff65ebed6c18f',1,'Material']]],
+  ['setvolume',['setVolume',['../class_cell.html#a6fc7beb75dbc2c7d2e418843d349ecbb',1,'Cell::setVolume()'],['../class_hexahedron.html#abbe6644be6ec825d6ee4fef51165b56a',1,'Hexahedron::setVolume()'],['../class_pyramid.html#af9866f9f413990611a838aa783458c7c',1,'Pyramid::setVolume()'],['../class_tetrahedron.html#a8ffdd29e3ee24f6a86277ba7ecf165d4',1,'Tetrahedron::setVolume()']]],
+  ['setweight',['setWeight',['../class_cell.html#ad4f0d46de0e162e087ff130a45946186',1,'Cell']]],
+  ['shrinkfactorchanged',['shrinkFactorChanged',['../class_dialog_edit_shrink_filter.html#a0182d36152a6bbd647638da459ee7b1d',1,'DialogEditShrinkFilter']]],
+  ['sourcefilepath',['sourceFilePath',['../class_model.html#a7cb133a59052bbf9830d4a2c9404a229',1,'Model']]],
+  ['submat',['subMat',['../class_matrix.html#a127d6b5b3c788631d378082a5b6a0f91',1,'Matrix']]]
 ];
