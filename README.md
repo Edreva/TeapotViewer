@@ -1,9 +1,9 @@
-# Group32's 'TeapotViewer'  [![Build Status](https://travis-ci.com/EDrever-Smith/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master)](https://travis-ci.com/EDrever-Smith/2019_GROUP_32)  
+# Group32's 'TeapotViewer'  [![Build Status](https://travis-ci.com/edreva/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master)](https://travis-ci.com/EDrever-Smith/2019_GROUP_32)  
 TeapotViewer is 3D Model Viewer for Windows that can load .STL and .mod files. Written in C++, its GUI uses the Qt widget toolkit and employs VTK for the model visualisation. Requires Visual C++ to run. Produced by [Group 32](TEAM.md).
-## [Documentation](https://edrever-smith.github.io/2019_GROUP_32/ "Library Documentation")  
-## [Installers](https://github.com/EDrever-Smith/2019_GROUP_32/tree/gh-resources/Installers "Installers")
+## [Documentation](https://edreva.github.io/2019_GROUP_32/ "Library Documentation")  
+## [Installers](https://github.com/edreva/2019_GROUP_32/tree/gh-resources/Installers "Installers")
 ## Demo  
-![](https://github.com/EDrever-Smith/2019_GROUP_32/blob/gh-resources/ModelViewerDemo.gif) 
+![](https://github.com/edreva/2019_GROUP_32/blob/gh-resources/ModelViewerDemo.gif) 
 ## Building Source Code  
 **1. Create build directory in root directory**
 ```cmd
@@ -49,7 +49,7 @@ msbuild PACKAGE.vcxproj
 mingw32-make package
 ```
 ### Running Installer
-![](https://github.com/EDrever-Smith/2019_GROUP_32/blob/gh-resources/ModelViewerNSISDemo.gif) 
+![](https://github.com/edreva/2019_GROUP_32/blob/gh-resources/ModelViewerNSISDemo.gif) 
 ## Known Bugs and Issues  
 - When building from source using MinGW, a quoting issue is encountered when trying to load the .rc file to give the executable an icon. By default, this is avoided by not adding the resource.rc file as a source if a GNU compiler is detected. However, there is an odd fix. By running mingw32-make once then, once this fails, change the root CMakeLists.txt (in any way so just add whitespace and save) then running mingw32-make again will run without error.
 - Currently there are issues when trying to use MSVC to build release versions of the project. The executable seems to be linked to Qts debug dlls even though it was compiled in Release. Suspected linker issue.
