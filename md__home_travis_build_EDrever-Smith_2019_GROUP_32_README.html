@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>Group32 Model Viewer: Group32&#39;s &#39;TeapotViewer&#39;  [![Build Status](https://travis-ci.com/EDrever-Smith/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&amp;branch=master)](https://travis-ci.com/EDrever-Smith/2019_GROUP_32)</title>
+<title>Group32 Model Viewer: Group32&#39;s &#39;TeapotViewer&#39;  [![Build Status](https://travis-ci.com/edreva/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&amp;branch=master)](https://travis-ci.com/EDrever-Smith/2019_GROUP_32)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -77,14 +77,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Group32's 'TeapotViewer' [![Build Status](<a href="https://travis-ci.com/EDrever-Smith/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master">https://travis-ci.com/EDrever-Smith/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&amp;branch=master</a>)](<a href="https://travis-ci.com/EDrever-Smith/2019_GROUP_32">https://travis-ci.com/EDrever-Smith/2019_GROUP_32</a>) </div>  </div>
+<div class="title">Group32's 'TeapotViewer' [![Build Status](<a href="https://travis-ci.com/edreva/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master">https://travis-ci.com/edreva/2019_GROUP_32.svg?token=KfjpPmpzoQSKxZtRyAzE&amp;branch=master</a>)](<a href="https://travis-ci.com/EDrever-Smith/2019_GROUP_32">https://travis-ci.com/EDrever-Smith/2019_GROUP_32</a>) </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>TeapotViewer is 3D <a class="el" href="class_model.html" title="Class for reading .mod file and providing details regarding its contents. ">Model</a> Viewer for Windows that can load .STL and .mod files. Written in C++, its GUI uses the Qt widget toolkit and employs VTK for the model visualisation. Requires Visual C++ to run. Produced by Group 32. </p><h2><a href="https://edrever-smith.github.io/2019_GROUP_32/" title="Library Documentation">Documentation</a></h2>
-<h2><a href="https://github.com/EDrever-Smith/2019_GROUP_32/tree/gh-resources/Installers" title="Installers">Installers</a></h2>
+<div class="textblock"><p>TeapotViewer is 3D <a class="el" href="class_model.html" title="Class for reading .mod file and providing details regarding its contents. ">Model</a> Viewer for Windows that can load .STL and .mod files. Written in C++, its GUI uses the Qt widget toolkit and employs VTK for the model visualisation. Requires Visual C++ to run. Produced by Group 32. </p><h2><a href="https://edreva.github.io/2019_GROUP_32/" title="Library Documentation">Documentation</a></h2>
+<h2><a href="https://github.com/edreva/2019_GROUP_32/tree/gh-resources/Installers" title="Installers">Installers</a></h2>
 <h2>Demo</h2>
 <div class="image">
-<img src="https://github.com/EDrever-Smith/2019_GROUP_32/blob/gh-resources/ModelViewerDemo.gif" />
+<img src="https://github.com/edreva/2019_GROUP_32/blob/gh-resources/ModelViewerDemo.gif" />
 </div>
  <h2>Building Source Code</h2>
 <p><b>1. Create build directory in root directory</b> </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;mkdir build</div></div><!-- fragment --><p> <b>2. Generate cmake files in build directory - Must ensure that CMake is passed the location of Qt and VTK binaries and they are in PATH</b> <em>Example using MSVC</em> </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cd build</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;cmake -DCMAKE_PREFIX_PATH=C:\path\to\Qt\bin;C:\path\to\VTK\bin&quot; -G &quot;Visual Studio 16 2019&quot; ..</div></div><!-- fragment --><p> <em>Example using MinGW</em> </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;cd build</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;cmake -DCMAKE_PREFIX_PATH=C:\path\to\Qt\bin;C:\path\to\VTK\bin&quot; -G &quot;MinGW Makefiles&quot; ..</div></div><!-- fragment --><p> <b>3. Generate binaries using chosen compiler</b> <em>Example using MSVC &ndash; Cannot yet be done in release, see Known Bugs and Issues</em> </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;msbuild Group32ModelViewer.sln</div></div><!-- fragment --><p> <em>Example using MinGW</em> </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;mingw32-make</div></div><!-- fragment --> <h2>Install (Source)</h2>
@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h3>Build Installer</h3>
 <p><em>Example using MSVC &ndash; Cannot yet be done in release, see Known Bugs and Issues</em> </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;msbuild PACKAGE.vcxproj</div></div><!-- fragment --><p> <em>Example using MinGW</em> </p><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;mingw32-make package</div></div><!-- fragment --> <h3>Running Installer</h3>
 <div class="image">
-<img src="https://github.com/EDrever-Smith/2019_GROUP_32/blob/gh-resources/ModelViewerNSISDemo.gif" />
+<img src="https://github.com/edreva/2019_GROUP_32/blob/gh-resources/ModelViewerNSISDemo.gif" />
 </div>
  <h2>Known Bugs and Issues</h2>
 <ul>
