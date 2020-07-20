@@ -7,7 +7,7 @@ var searchData=
   ['material_2eh',['material.h',['../material_8h.html',1,'']]],
   ['matrix',['Matrix',['../class_matrix.html',1,'Matrix'],['../class_matrix.html#a2dba13c45127354c9f75ef576f49269b',1,'Matrix::Matrix()'],['../class_matrix.html#a8babd004b9967f110b1627a3017ee0ab',1,'Matrix::Matrix(int row, int col)'],['../class_matrix.html#a742cc4954637c96b39ffee18b506912d',1,'Matrix::Matrix(Vector v)'],['../class_matrix.html#a765f4dcb51b6829311cc3e7576388423',1,'Matrix::Matrix(const Matrix &amp;m)']]],
   ['matrix_2eh',['matrix.h',['../matrix_8h.html',1,'']]],
-  ['model_20viewer_20application',['Model Viewer Application',['../md__home_travis_build_EDrever-Smith_2019_GROUP_32_Model_Viewer_Application_README.html',1,'']]],
+  ['model_20viewer_20application',['Model Viewer Application',['../md__home_travis_build_Edreva_2019_GROUP_32_Model_Viewer_Application_README.html',1,'']]],
   ['minor_5f',['minor_',['../class_matrix.html#af4de4a02ac57f2f6c1e3ffe538252c08',1,'Matrix']]],
   ['model',['Model',['../class_model.html',1,'Model'],['../class_model.html#a66d4539f097b59fde0d6244a14380046',1,'Model::Model(string filePath)'],['../class_model.html#ae3b375de5f6df4faf74a95d64748e048',1,'Model::Model()'],['../class_model.html#a0386968ae522e868e3b6028c8b154837',1,'Model::Model(const Model &amp;)']]],
   ['model_2eh',['model.h',['../model_8h.html',1,'']]]
