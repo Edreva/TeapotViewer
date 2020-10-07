@@ -1,7 +1,7 @@
 # Group32's 'TeapotViewer'  [![Build Status](https://travis-ci.com/Edreva/TeapotViewer.svg?token=KfjpPmpzoQSKxZtRyAzE&branch=master)](https://travis-ci.com/Edreva/TeapotViewer)  
 TeapotViewer is 3D Model Viewer for Windows that can load .STL and .mod files. Written in C++, its GUI uses the Qt widget toolkit and employs VTK for the model visualisation. Requires Visual C++ to run. Produced by [Group 32](TEAM.md).
-## [Documentation](https://edreva.github.io/2019_GROUP_32/ "Library Documentation")  
-## [Installers](https://github.com/edreva/2019_GROUP_32/tree/gh-resources/Installers "Installers")
+## [Documentation](https://edreva.github.io/TeapotViewer/ "Library Documentation")  
+## [Installers](https://github.com/edreva/TeapotViewer/tree/gh-resources/Installers "Installers")
 ## Demo  
 ![](https://github.com/edreva/2019_GROUP_32/blob/gh-resources/ModelViewerDemo.gif) 
 ## Building Source Code  
